@@ -1,0 +1,36 @@
+/* pages/student/selectDrvSchool/selectDrvSchool.wxss */
+.auth-con {
+  background: #fff;
+  font-size: 30rpx;
+  color: #333;
+  margin-top: 20rpx;
+}
+
+.auth-con .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 96rpx;
+  line-height: 96rpx;
+  border-bottom: 1px solid #F7F9FC;
+  padding-left: 48rpx;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+}
+
+.auth-con .item .item-r {
+  display: flex;
+}
+
+.auth-con .item .icon-right {
+  width: 48rpx;
+  height: 48rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.auth-con .bg_btn {
+  position: absolute;
+  bottom: 10%;
+  left: 60rpx;
+}

@@ -1,0 +1,58 @@
+/**app.wxss**/
+page {
+  background-color: #F7F9FC;
+  font-family: "PingFang SC" !important;
+}
+
+.bg_btn {
+  width: 630rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+  margin: auto;
+  line-height: 100rpx;
+  text-align: center;
+  font-weight: 400;
+  font-size: 36rpx;
+  background: #2072FD;
+  color: #FFFFFF;
+}
+
+.bg_avatar {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 80rpx;
+  margin: 60rpx auto;
+  display: block;
+}
+
+.warn_text {
+  font-size: 30rpx;
+  font-weight: 400;
+  color: #666666;
+  line-height: 42rpx;
+  text-align: center;
+}
+
+.nodata image {
+  width: 55%;
+  height: auto;
+}
+
+.nodata {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 150rpx;
+}
+
+.nodata view {
+  width: 100%;
+  text-align: center;
+  color: #333333;
+  font-size: 30rpx;
+}
+
+/* .bottom-box {
+  width: 100%;
+  height: 100rpx;
+} */

@@ -1,0 +1,94 @@
+{
+  "pages": [
+    "pages/studypage/studypage",
+    "pages/login/login",
+    "pages/student/myAppointment/myAppointment",
+    "pages/student/selectDrvSchool/selectDrvSchool",
+    "pages/student/addAppointment/addAppointment",
+    "pages/messageCenter/messageCenter",
+    "pages/messageCenterDetail/messageCenterDetail",
+    "pages/orderManagement/orderManagement",
+    "pages/orderInformation/orderInformation",
+    "pages/orderusagerecord/orderusagerecord",
+    "pages/projectVideo/projectVideo",
+    "pages/setting/setting",
+    "pages/nickname/nickname",
+    "pages/authname/authname",
+    "pages/mine/mine",
+    "pages/scancode/scancode",
+    "pages/light/light",
+    "pages/trainingtype/trainingtype",
+    "pages/trainingrecord/trainingrecord",
+    "pages/statistics/statistics",
+    "pages/coach/coach",
+    "pages/evaluate/evaluate",
+    "pages/usesuccess/usesuccess",
+    "pages/paysuccess/paysuccess",
+    "pages/share/share",
+    "pages/subtwodescriptions/subtwodescriptions",
+    "pages/subthreedescriptions/subthreedescriptions",
+    "pages/studyunit/studyunit",
+    "pages/bindreferrer/bindreferrer",
+    "pages/charts/scrollline/scrollline",
+    "pages/schoolauth/schoolauth",
+    "pages/notusedevice/notusedevice",
+    "pages/index/index",
+    "pages/authstatus/authstatus",
+    "pages/city/city",
+    "pages/authsuccess/authsuccess",
+    "pages/setmeal/setmeal",
+    "pages/updataphone/updataphone",
+    "pages/loginagreement/loginagreement",
+    "pages/loginpolicy/loginpolicy",
+    "pages/datepicker/datepicker",
+    "pages/timepicker/timepicker",
+    "pages/appointmensuccess/appointmensuccess",
+    "pages/appointmenting/appointmenting",
+    "pages/endtraining/endtraining",
+    "pages/appointcoach/appointcoach"
+  ],
+  "subpackages": [
+    {
+      "root": "package",
+      "pages": [
+        "pages/placeorder/placeorder",
+        "pages/appointment/appointment"
+      ]
+    }
+  ],
+  "tabBar": {
+    "custom": true,
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/studypage/studypage",
+        "text": "学习",
+        "iconPath": "static/images/student.png",
+        "selectedIconPath": "static/images/student-s.png"
+      },
+      {
+        "pagePath": "pages/scancode/scancode",
+        "text": "",
+        "iconPath": "static/images/code.png",
+        "selectedIconPath": "static/images/code.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "static/images/mine.png",
+        "selectedIconPath": "static/images/mine-s.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "精英小蜜",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

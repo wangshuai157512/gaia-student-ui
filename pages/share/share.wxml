@@ -1,0 +1,87 @@
+<!--pages/share/share.wxml-->
+<view class="share-con" wx:if="{{!showPop}}">
+  <view class="share-box">
+    <image class="photo" src="{{photoaddr}}"></image>
+    <view class="title">恭喜您训练完成啦，距离驾照又进一步哦！</view>
+    <view class="record">
+      <view class="record-l">累计训练时长：</view>
+      <view class="record-r"> {{trainMsg.trainDuration}}分钟</view>
+      <view class="record-l">本次训练时长：</view>
+      <view class="record-r"> {{trainMsg.curTrainDuration}}分钟</view>
+      <view class="record-l">科目二考试合格率：</view>
+      <view class="record-r"> {{trainMsg.subTwoPass}}%</view>
+      <view class="record-l">科目三考试合格率：</view>
+      <view class="record-r"> {{trainMsg.subThreePass}}%</view>
+    </view>
+    <image class="line" src="../../static/images/share-box-bg.png"></image>
+    <view class="wisdom">
+      <view>不积跬步无以至千里</view>
+      您的每一次努力，都能帮助你更快的拿到驾照哦
+    </view>
+  </view>
+  <view class="share-bottom">
+    <view class="tip">这么努力当然要炫耀一下啦！</view>
+    <view class="bg_btn" bindtap="handleShare">立即分享</view>
+  </view>
+</view>
+<!-- 图片合成页 -->
+<view class="pop-bg {{showPop?'block':'none'}}">
+  <view class="canvs-con share__canvas">
+    <view class="title draw_canvas" data-type="text" data-text="{{ trainMsg.schoolName }}">{{ trainMsg.schoolName }}</view>
+    <view class="draw_canvas" data-type="text" data-text="为了您的驾照，我们更努力">为了您的驾照，我们更努力</view>
+    <view class="photo-box">
+      <!-- <view class="photo draw_canvas" data-type="image" data-url="{{userAvatarUrl}}"  src="{{userAvatarUrl}}">
+                <open-data style="width:100%;height: auto;" type="userAvatarUrl"></open-data>
+            </view> -->
+      <image class="draw_canvas" data-type="image" data-url="{{photoaddr}}" src="{{photoaddr}}" alt="" />
+      <view class="finish draw_canvas">
+        <view class="draw_canvas" data-type="text" data-text="我又在{{ trainMsg.schoolName }}">我又在{{ trainMsg.schoolName }}</view>
+        <view class="draw_canvas" data-type="text" data-text="完成了一次训练哦！">
+          完成了一次训练哦！
+        </view>
+      </view>
+      <view class="time">
+        <view>
+          <view class="num draw_canvas" data-type="text" data-text="{{ trainMsg.curTrainDurations||0 }}h">{{ trainMsg.curTrainDurations||0 }}h</view>
+          <view class="draw_canvas" data-type="text" data-text="训练时长">训练时长</view>
+        </view>
+        <view>
+          <view class="num draw_canvas" data-type="text" data-text="{{ trainMsg.pass }}%">{{ trainMsg.pass }}%</view>
+          <view class="draw_canvas" data-type="text" data-text="合格率">合格率</view>
+        </view>
+      </view>
+    </view>
+    <!-- <image class="line draw_canvas" data-type="image" 
+                data-url="../../static/images/canvas-bg.png" src="../../static/images/canvas-bg.png"></image> -->
+    <view class="code-box">
+      <view>
+        <view class="strive draw_canvas" data-type="text" data-text="您的每次努力我们都记得哦！">您的每次努力我们都记得哦！</view>
+        <view class="draw_canvas" data-type="text" data-text="长按识别二维码，汲取学车知识">
+          长按识别二维码，汲取学车知识
+        </view>
+      </view>
+      <view>
+        <image class="draw_canvas" data-type="image" data-url="../../static/images/stu-code.jpg" src="../../static/images/stu-code.jpg"></image>
+      </view>
+    </view>
+  </view>
+  <view class="save-con">
+    <!-- <view class="share-friends">分享给好友</view> -->
+    <view class="save-img-box">
+      <view class="item">
+        <button open-type="share">
+          <image src="../../static/images/wechat.png"></image>
+        </button>
+        <view>微信好友</view>
+      </view>
+      <view class="item">
+        <view bindtap="handleSave">
+          <image src="../../static/images/save-photo.png"></image>
+        </view>
+        <view>保存到本地</view>
+      </view>
+    </view>
+    <view class="bg_btn" bindtap="cancelShare">取消</view>
+  </view>
+  <canvas canvas-id="share" class="canvs-con"></canvas>
+</view>

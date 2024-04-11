@@ -1,0 +1,38 @@
+<!--pages/authstatus/authstatus.wxml-->
+<view class="auth-con">
+  <view class="item" bindtap="handleSelectCity">
+    <view>
+      所在城市
+    </view>
+    <view class="item-r">
+      <view>{{cityname}}</view>
+      <view>
+        <image class="icon-right" src="{{icon}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="item" wx:if="{{!cityname}}" bindtap="handleSchool">
+    <view>
+      驾校名称
+    </view>
+    <view>
+      <image class="icon-right" src="{{icon}}"></image>
+    </view>
+  </view>
+  <picker wx:else mode="selector" bindchange="handleSchool" value="{{pickerIndex}}" range="{{schoolList}}" range-key="name">
+    <view class="item">
+      <view>
+        驾校名称
+      </view>
+      <view class="item-r">
+        <view>{{drvSchoolName}}</view>
+        <view>
+          <image class="icon-right" src="{{icon}}"></image>
+        </view>
+      </view>
+    </view>
+  </picker>
+  <view class="bg_btn" bindtap="schoolRegisterSubmit">
+    确定
+  </view>
+</view>

@@ -1,0 +1,102 @@
+<view class="contaner">
+  <image class="bg_avatar" src="{{ photoaddr }}"></image>
+  <view class="bh">
+    <image mode="widthFix" src="../../static/images/training-01.png"></image>
+    非常棒！
+  </view>
+  <view class="details">
+    <view>
+      <view class="item">第一次</view>
+      <view class="item">得分90</view>
+      <view class="item">扣分1次</view>
+      <view class="item">用时15分59秒</view>
+    </view>
+    <view>
+      <view class="item">第一次</view>
+      <view class="item">得分90</view>
+      <view class="item">扣分1次</view>
+      <view class="item">用时15分59秒</view>
+    </view>
+  </view>
+  <view class="bot">
+    <view class="line-spre">
+      <view class="l p"></view>
+      <view class="r p"></view>
+    </view>
+    <view class="xl">
+      <view>
+        <text class="ts">本次训练时长</text>
+        <text>30分钟22秒</text>
+      </view>
+      <view>
+        <text class="ts">本次训练科目</text>
+        <text>科目二</text>
+      </view>
+    </view>
+  </view>
+</view>
+<page-container show="{{show}}" round="{{round}}" duration="{{duration}}" position="{{position}}" bindenter="onEnter" custom-style="{{customStyle}}">
+  <view wx:if="{{ isPageShow }}" class="page-container-content">
+    <view class="contaner_page">
+      <view class="school">
+        <text data-type="text" data-text="龙丰驾校" class="title draw_canvas">龙丰驾校</text>
+        <text data-type="text" data-text="为了您的驾照，我们更努力" class="tt draw_canvas">为了您的驾照，我们更努力</text>
+      </view>
+      <image data-type="image" data-url="{{ photoaddr }}" class="bg_avatar draw_canvas" src="{{ photoaddr }}"></image>
+      <view class="bh">
+        <image class="draw_canvas" data-type="image" data-url="../../static/images/training-01.png" mode="widthFix" src="../../static/images/training-01.png"></image>
+        <text class="draw_canvas" data-type="text" data-text="非常棒！">非常棒！</text>
+      </view>
+      <view class="bot">
+        <view class="xl">
+          <view>
+            <text data-type="text" data-text="本次训练时长" class="ts draw_canvas">本次训练时长</text>
+            <text data-type="text" data-text="30分钟22秒" class="draw_canvas">30分钟22秒</text>
+          </view>
+          <view>
+            <text data-type="text" data-text="本次训练科目" class="ts draw_canvas">本次训练科目</text>
+            <text data-type="text" data-text="科目二" class="draw_canvas">科目二</text>
+          </view>
+        </view>
+      </view>
+      <view class="bot">
+        <view class="line-spre">
+          <view class="l p"></view>
+          <view class="r p"></view>
+        </view>
+        <view class="xls">
+          <view style="flex:3">
+            <text data-type="text" data-text="您的每次努力我们都记得哦！" class="ts draw_canvas">您的每次努力我们都记得哦！</text>
+            <text data-type="text" data-text="长按识别二维码，汲取学车知识" class="draw_canvas">长按识别二维码，汲取学车知识</text>
+          </view>
+          <view>
+
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="save-con">
+    <!-- <view class="share-friends">分享给好友</view> -->
+    <view class="save-img-box">
+      <view class="item">
+        <button open-type="share">
+          <image src="../../static/images/wechat.png"></image>
+        </button>
+        <view>微信好友</view>
+      </view>
+      <view class="item">
+        <view bindtap="handleSave">
+          <image src="../../static/images/save-photo.png"></image>
+        </view>
+        <view>保存到本地</view>
+      </view>
+    </view>
+    <view class="bg_btn" bindtap="cancelShare">取消</view>
+  </view>
+</page-container>
+<view class="btn-btom">
+  <text>这么努力，当然要炫耀一下</text>
+  <view bindtap="share" class="pay-btn">立即分享</view>
+</view>
+<canvas canvas-id="share"></canvas>

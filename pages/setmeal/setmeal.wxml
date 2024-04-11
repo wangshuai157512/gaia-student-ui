@@ -1,0 +1,31 @@
+<!--pages/setmeal/setmeal.wxml-->
+<view class="banner"></view>
+<view class="swiper-con">
+  <swiper style="height: 100%;" bindchange="currentChange">
+    <block wx:for="{{ bannerList }}" wx:key="index">
+      <swiper-item>
+        <image src="{{ ImagOrigin + item.advPhoto }}" alt="" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="dots">
+    <block wx:for="{{ bannerList }}" wx:key="index">
+      <view class="dot {{ index == currentIndex ? 'active' : '' }}"></view>
+    </block>
+  </view>
+</view>
+<view class="pay-container">
+  <view wx:for="{{ payDataList }}" wx:key="index" class="pay-item">
+    <image wx:if="{{ item.setmealDiscount==0 }}" mode="widthFix" src="../../static/images/recom.png"></image>
+    <view class="pay-content">
+      <view class="left">
+        <view>
+          <text class="money">￥{{ item.setmealDiscount==0?item.setmealPayDiscount:item.setmealPay }}</text>
+          <text class="date">{{ item.setmealQuantity }}{{setmealUnit[item.setmealUnit]}}</text>
+        </view>
+        <text wx:if="{{ item.setmealDiscount==0 }}">￥{{ item.setmealPay }}</text>
+      </view>
+      <view bindtap="handlePay" data-id="{{ item.id }}" class="right">立即购买</view>
+    </view>
+  </view>
+</view>

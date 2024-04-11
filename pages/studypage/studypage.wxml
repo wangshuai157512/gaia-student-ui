@@ -1,0 +1,33 @@
+<!--pages/study/studypage/studypage.wxml-->
+<view class="study-page">
+    <view class="tab-title">
+        <view wx:for="{{tabTitle}}" wx:key="index" data-index="{{index}}" bindtap="handleTab" class="{{index==tabIndex?'active':''}}">{{item}}</view>
+    </view>
+    <view class="tab-con">
+        <view class="swiper-con">
+            <swiper style="height: 100%;" bindchange="currentChange">
+                <block wx:for="{{bannerList}}" wx:key="index">
+                    <swiper-item style="border-radius: 8px;">
+                        <!-- <navigator url="https://www.baidu.com/"> -->
+                            <image mode="widthFix" src="{{baseUrl + item.advPhoto}}" alt="" />
+                        <!-- </navigator> -->
+                    </swiper-item>
+                </block>
+            </swiper>
+            <view class="dots">
+                <block wx:for="{{bannerList}}" wx:key="index">
+                    <view class="dot {{index == currentIndex ? 'active' : ''}}"></view>
+                </block>
+            </view>
+        </view>
+        <view class="brief-con">
+            <view class="brief-item" data-url="{{item.toUrl}}" bindtap="briefDetail" wx:for="{{tabIndex === 1?briefObj.threeBrief:briefObj.twoBrief}}" wx:key="index">
+                <image mode="widthFix" src="{{item.img}}"></image>
+                <view style="width: 90rpx;">{{item.name}}</view>
+            </view>
+        </view>
+        <video-list titleOption="{{titleOption}}" videoList="{{videoList}}" bind:changeState="hanldlePartent"  bind:lookVideo="lookVideo"></video-list>
+        <image mode="widthFix" bindtap="jump" wx:if="{{isUseing}}" class="guide" src="../../static/images/guide.png"></image>
+    </view>
+</view>
+<view style="height: 100rpx;"></view>

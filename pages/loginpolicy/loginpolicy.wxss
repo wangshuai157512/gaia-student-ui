@@ -1,0 +1,41 @@
+/* pages/loginpolicy/loginpolicy.wxss */
+page {
+    background-color: white;
+}
+
+.textcontent {
+    font-size: 24rpx;
+    color: black;
+
+}
+
+.textcontent view {
+    padding: 20rpx 35rpx;
+    letter-spacing: 2rpx;
+    text-align: justify;
+}
+
+/* 
+.title {
+    font-size: 30rpx;
+    font-weight: 700;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+} */
+
+.textcontent .brdus {
+    position: relative;
+    padding: 20rpx 50rpx;
+}
+
+.textcontent .brdus::before {
+    content: "";
+    width: 10rpx;
+    height: 10rpx;
+    background-color: black;
+    position: absolute;
+    left: 35rpx;
+    top: 31rpx;
+    border-radius: 50%;
+}

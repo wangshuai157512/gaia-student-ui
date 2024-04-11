@@ -1,0 +1,17 @@
+<!--/* 我的-我的预约 */-->
+<view class='container content'>
+  <view class="list-item-body">
+    <view wx:if="{{msg.createTime}}" class="l-i-b-time">
+      <text>{{msg.createTime}}</text>
+    </view>
+    <view wx:if="{{msg.url}}" class="l-i-b-url">
+      <image src="{{ImagOrigin+'/'+msg.url}}" alt="图片加载失败" />
+    </view>
+    <view wx:if="{{msg.title}}" class="l-i-b-title">
+      {{msg.title}}
+    </view>
+    <view wx:if="{{msg.body}}" class="l-i-b-body">
+      {{msg.body}}
+    </view>
+  </view>
+</view>

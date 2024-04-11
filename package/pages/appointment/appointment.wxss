@@ -1,0 +1,28 @@
+/* pages/appointment/appointment.wxss */
+.appointment-con {
+  width: 750rpx;
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+.appointment-con .image-box {
+  width: 100%;
+  /* height: 350rpx; */
+  margin-bottom: 24rpx;
+  position: relative;
+}
+.appointment-con .image-box image {
+  width: 702rpx;
+  height: auto;
+}
+.appointment-con .image-box .btn{
+  width: 150rpx; 
+  height: 44rpx;
+  line-height: 44rpx;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 22rpx;
+  font-size: 24rpx;
+  position: absolute;
+  right: 22%;
+  top: 58%;
+}

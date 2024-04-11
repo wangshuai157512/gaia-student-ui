@@ -1,0 +1,14 @@
+<!--pages/light/light.wxml-->
+<view class=light-con">
+    <video src="{{baseUrl+videoMsg.video}}" poster="{{baseUrl+videoMsg.videoScreen}}"  bindplay='playVideo' custom-cache="{{false}}"></video>
+    <view class="explain-box">
+        <view class="explain-top">
+            <view class="title">{{videoMsg.name}}</view>
+            <view>
+                {{videoMsg.remark}}
+            </view>
+        </view>
+    </view>
+
+</view>
+<view style="height: 100rpx;"></view>

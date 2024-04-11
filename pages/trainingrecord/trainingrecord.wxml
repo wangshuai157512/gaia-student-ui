@@ -1,0 +1,35 @@
+<wxs src="../../utils/util.wxs" module="date"> </wxs>
+<view class='protab swiper-tab'>
+  <view class="swiper-tab-item {{ currentTab==0 ? 'active' : '' }}" data-current="0" catchtap="swichNav">智能模拟器</view>
+  <view class="swiper-tab-item {{ currentTab==1 ? 'active' : '' }}" data-current="1" catchtap="swichNav">机器人教练</view>
+  <view class="swiper-tab-item {{ currentTab==2 ? 'active' : '' }}" data-current="2" catchtap="swichNav">易学通</view>
+</view>
+<view style="height:80rpx"></view>
+<view wx:if="{{ isShow }}" class="content">
+  <view wx:for="{{ pageList }}" wx:for-index="index" wx:key="index" class="content-item">
+    <!-- <view class="item-date">{{ index }}</view> -->
+    <view bindtap="getDetails" wx:for-item="items" data-id="{{ items.id }}" wx:for="{{ item }}" wx:for-index="indexs" wx:key="indexs" class="item-text">
+      <view class="text-left">
+        <text class="label">登陆时长：</text>
+        {{ date.timeSplit(items.loginTime) }}-{{ date.timeSplit(items.logoutTime) }}（{{ date.parseTimes(items.loginTimeDuration) }}）
+      </view>
+      <view class="text-left">
+        <text class="label">训练日期：</text>
+        {{ index }}
+      </view>
+      <view class="text-left">
+        <text class="label">{{ currentTab==0?'设备编号：':'车牌号：' }}</text>
+        {{ items.trainEquipmentId }}
+        <text class="comment">查看点评</text>
+      </view>
+      <view class="text-bot">
+        <image mode="widthFix" src="../../static/images/address.png"></image>
+        {{ items.schoolName }}
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else class="nodata">
+  <image mode="widthFix" src="../../static/images/nodata.png"></image>
+  <view>你还没有进行练习哦，快去练习吧！</view>
+</view>

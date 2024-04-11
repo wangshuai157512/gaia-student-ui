@@ -1,0 +1,8 @@
+<!--pages/appointment/appointment.wxml-->
+<view class="appointment-con">
+  <view class="image-box" wx:for="{{equipmentList}}" wx:key="index" data-index="{{index}}" bindtap="goAppointment">
+    <image mode="widthFix" src="{{item.img}}">
+    </image>
+    <!-- <view class="btn" style="color: {{item.color}};"  >立即预约</view> -->
+  </view>
+</view>

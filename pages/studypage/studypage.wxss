@@ -1,0 +1,107 @@
+/* pages/study/studypage/studypage.wxss */
+
+.study-page {
+    width: 100%;
+    background: #F7F9FC;
+    padding: 30rpx 40rpx;
+    box-sizing: border-box;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.tab-title {
+    width: 750rpx;
+    height: 120rpx;
+    padding: 24rpx 40rpx;
+    box-sizing: border-box;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    z-index: 10;
+}
+.tab-title view {
+    width: 50%;
+    height: 74rpx;
+    line-height: 74rpx;
+    text-align: center;
+    background: #F7F7F7;
+}
+.tab-title view:first-child{  
+    border-radius: 8rpx 0px 0px 8rpx;
+}
+.tab-title view:last-child{  
+    border-radius: 0px 4px 4px 0px;
+}
+.tab-title view.active {
+    background: #2072FD;
+    color: #fff;
+}
+
+.tab-con {
+    margin-top: 120rpx;
+}
+.tab-con .swiper-con{
+    width: 100%;
+    height: 180rpx;
+    position: relative;
+}
+.tab-con .swiper-con image{
+    width: 100%;
+    height: 180rpx;
+    border-radius: 8px;
+}
+
+.dots{ 
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    bottom: 20rpx; 
+    display: flex; 
+    justify-content: center; 
+  } 
+  .dots .dot{ 
+    margin: 0 8rpx; 
+    width: 10rpx; 
+    height: 10rpx; 
+    background: #fff; 
+    border-radius: 8rpx; 
+    transition: all .6s; 
+  } 
+  .dots .dot.active{ 
+    width: 32rpx; 
+    border-radius: 6rpx;
+    height: 10rpx;
+  }
+
+  .brief-con {
+      display: flex;
+      justify-content: space-between;
+      margin: 30rpx 0;
+  }
+  .brief-con .brief-item {
+      width: 324rpx;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding:0 28rpx 0 28rpx;
+      box-sizing: border-box;
+  }
+  .brief-con .brief-item image {
+      display: block;
+      width: 158rpx;
+      height: 140rpx!important;
+      margin-right: 20rpx;
+  }
+  .guide {
+      width: 630rpx;
+      height: 70rpx;
+      position: fixed;
+      bottom: 200rpx;
+  }
+  

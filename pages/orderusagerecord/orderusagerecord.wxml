@@ -1,0 +1,16 @@
+<wxs module="date" src="../../utils/util.wxs"></wxs>
+<view wx:key="index" wx:for="{{ orderMsg }}">
+    <view class="dateShow">{{ index }} </view>
+    <view wx:for="{{ item }}" wx:key="index" class="content">
+        <view class="card-item">
+            <view class="car-view">
+                <view class="left">训练时长：{{item.useDuration}}分钟</view>
+                <view class="right">剩余时长</view>
+            </view>
+            <view class="car-view">
+                <view class="car-type">设备编号：{{item.sbbh||''}}</view>
+                <view class="rightTime">{{item.remainDuration}}分钟</view>
+            </view>
+        </view>
+    </view>
+</view>

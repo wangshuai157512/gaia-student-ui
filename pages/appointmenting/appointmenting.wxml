@@ -1,0 +1,54 @@
+<view class="banner">
+  <image mode="widthFix" src="../../static/images/equipmentBanner.png"></image>
+</view>
+<view class="menu-container">
+  <view wx:key="index" wx:for="{{ menu }}" class="menu-box" wx:if="{{ !item.isHide}}">
+    <picker wx:if="{{item.type === 'select'}}" mode="selector" data-index="{{index}}" bindchange="{{item.handle}}" value="{{pickerIndex}}" range="{{item.list}}" range-key="label" >
+    <view class="menu-item">
+      <view>
+        <image mode="widthFix" class="ioc" src="{{ item.imgUrl }}"></image>
+        <text>{{ item.name }}</text>
+      </view>
+      <view>
+        <view>{{item.label}}</view>
+        <image mode="widthFix" class="iocs" src="../../static/images/arrow.png"></image>
+      </view>
+    </view>
+    </picker>
+  
+    <view wx:else class="menu-item" bindtap="{{ item.handle}}">
+      <view>
+        <image mode="widthFix" class="ioc" src="{{ item.imgUrl }}"></image>
+        <text>{{ item.name }}</text>
+      </view>
+      <view>
+        <view class="right-input" wx:if="{{item.type === 'input'}}" >
+             <input  type='number' bindinput="{{item.handle}}" value="{{form[item.formKey]}}" >
+              </input>
+              <text style="color: #000; display: inline-block;width:{{form.chargeWay==1?'auto':'58px'}}">{{form.chargeWay==1?'圈':"分钟"}}</text>
+        </view>
+        <view wx:else>{{form[item.formKey]}}</view>
+        <image wx:if="{{item.type !== 'input'}}" mode="widthFix" class="iocs" src="../../static/images/arrow.png"></image>
+      </view>
+    </view>
+    <view class="checkTime" wx:if="{{item.checkTime && form.timeList.length>0}}">
+          <view class="checkTimeBot" style="top: 0;"></view>
+          <view wx:for="{{form.timeList}}" wx:key="index" class="checkTimeItem">{{item.startTime}}-{{item.endTime}}</view>
+          <view class="checkTimeBot" style="bottom: 0;"></view>
+      </view>
+  </view>
+</view>
+<view class="bot">
+  <view wx:if="{{form.equipmentType==2}}">
+    <view class="pay-amount">
+      <view class="left">
+        <text>￥{{form.amount}}</text>
+      </view>
+      <view class="right">
+        <view><text>{{tipMsg[0]}}</text><text wx:if="{{!fullDecrementTipMsg && form.chargeWay==1}}">{{tipMsg[1]}}</text><text wx:if="{{fullDecrementTipMsg && form.chargeWay==1}}">{{fullDecrementTipMsg}}</text></view> 
+        <view><text>{{tipMsg[2]}}</text><text wx:if="{{!fullDecrementTipMsg && form.chargeWay==0}}">{{tipMsg[3]}}</text><text wx:if="{{fullDecrementTipMsg && form.chargeWay==0}}">{{fullDecrementTipMsg}}</text></view>
+      </view>
+    </view>
+  </view>
+  <view class="pay-btn {{form.equipmentType!=2?'pob':''}}" bindtap="handleAppoin">立即预约</view>
+</view>

@@ -1,0 +1,8 @@
+/* pages/bindreferrer/bindreferrer.wxss */
+.warn_text {
+  margin-bottom: 80rpx;
+}
+
+.bg_avatar{
+  margin-top: 70rpx;
+}

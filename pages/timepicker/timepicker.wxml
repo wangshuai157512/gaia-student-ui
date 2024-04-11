@@ -1,0 +1,40 @@
+<!--pages/timepicker/timepicker.wxml-->
+<view class="timePicker-con">
+  <scroll-view class="week-con" scroll-x="true">
+    <view class="week {{item.stillCan===false?'disabled':''}} {{index===activeIndex?'activeWeek':''}}" wx:for="{{weekList}}" wx:key="index" data-index="{{index}}" data-state="{{item.stillCan}}" data-trainDate="{{item.trainDate}}" bindtap="handleWeek">
+      <view>{{item.week}}</view>
+      <view class="picker">{{item.date}}</view>
+      <view style="color: {{item.stillCan===false?'#E82B46':'#2B9CE8'}};">{{item.stillCan===false?'不可约':'可约'}}</view>
+    </view>
+  </scroll-view>
+  <view class="time-box">
+    <view class="title">
+      <view class="lump"></view>
+      上午
+    </view>
+    <view class="time-con">
+      <view class="time {{(item.count===0||item.isDisabled)?'disabled':''}}{{timeQueue[index]?'activeWeek':''}}" wx:for="{{timeList}}" wx:key="index" data-index="{{index}}" data-count="{{item.count}}" data-key="{{ item.key }}" bindtap="handleTime" wx:if="{{item.isAm && item.hidden!=1}}">
+        <view>{{item.startTime}}-{{item.endTime}}</view>
+        <view class="count">余{{item.count}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 下午 -->
+  <view class="time-box">
+    <view class="title">
+      <view class="lump"></view>
+      下午
+    </view>
+    <view class="time-con">
+      <view class="time {{(item.count===0||item.isDisabled)?'disabled':''}}{{ timeQueue[index]?'activeWeek':'' }}" wx:for="{{timeList}}" wx:key="index" data-index="{{index}}" data-count="{{item.count}}" data-key="{{ item.key }}" bindtap="handleTime" wx:if="{{!item.isAm && item.hidden!=1}}">
+        <view>{{item.startTime}}-{{item.endTime}}</view>
+        <view class="count">余{{item.count}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="btn-con" wx:if="{{queryOption.equipmentType!=3}}">  
+    <view class="pay-btn pob" bindtap="preBtn">立即预约</view>
+  </view>
+  <view style="height: 140rpx;" wx:if="{{queryOption.equipmentType!=3}}">
+  </view>
+</view>

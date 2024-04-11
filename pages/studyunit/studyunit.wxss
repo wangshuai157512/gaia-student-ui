@@ -1,0 +1,72 @@
+/* pages/study/studyunit/studyunit.wxss */
+.study-unit {
+    width: 100%;
+    background: #F7F9FC;
+    padding: 30rpx 40rpx;
+    box-sizing: border-box;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.tab-title {
+    /* width: 750rpx; */
+    height: 120rpx;
+    padding: 24rpx 40rpx;
+    box-sizing: border-box;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    white-space: nowrap;
+}
+.tab-title view {
+    min-width: 210rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    background: #F7F7F7;
+    border-radius: 12rpx;
+    display: inline-block;
+    vertical-align: middle;
+}
+.tab-title view.active {
+    background: #2072FD;
+    color: #fff;
+}
+
+.study-unit .tab-con .item {
+    padding: 20rpx 40rpx;
+    background: #fff;  
+    border-radius: 16rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+.study-unit .tab-con .item .item-l {
+    display: flex;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+.study-unit .tab-con .item .item-l image {
+    width: 160rpx;
+    height: 100rpx;
+    border-radius: 8rpx;
+    margin-right: 20rpx;
+}
+.study-unit .tab-con .item .item-r {
+    display: flex;
+    align-items: center;
+}
+.study-unit .tab-con .item .item-r .time{
+    font-size: 26rpx;
+    color: #999;
+}
+.study-unit .tab-con .item .item-r image {
+    width: 32rpx;
+    height: 32rpx;
+    margin-left: 16rpx;
+}

@@ -1,0 +1,30 @@
+<!--pages/study/coursedescriptions/coursedescriptions.wxml-->
+<view class="descriptions-con">
+    <view class="descriptions" style="margin-bottom: 30rpx;">
+        <view class="title">科二简介</view>
+        <view style="margin-bottom: 40rpx;">
+            科目二，又称小路考，是机动车驾驶证考核的一部分，是场地驾驶技能考试科目的简称。
+        </view>
+        <view>
+            考试项目包括5项必考：倒车入库，侧方停车，坡道定点，曲线行驶，直角转弯。部分地区例如上海考9项，其他四项为：停车取卡，窄路掉头，隧道行驶，限宽门。贵州比上海多增加一项，模拟雨雾湿滑路段。
+        </view>
+    </view>
+    <view class="descriptions">
+        <view class="title">考前须知</view>
+        <view>
+            1.科目二满分为100分，成绩达到80分的为合格，所有考试项目必须一次性全部合格，才算过关。
+        </view>
+        <view>
+            2. 考试不合格的可以补考一次。不参加或者补考仍不合格的本次考试终止，10日后方可重新预约考试。
+        </view>
+        <view>
+            3. 考试结束后，考生迅速离开考场，不得干扰他人考试。
+        </view>
+        <view>
+            4. 考试结束后，要按工作人员指引，到指定位置签字确认考试成绩，否则成绩作废。
+        </view>
+        <view>
+            5. 在学习驾驶证有效期内，科目二预约考试不得超过5次，第五次考试仍然不合格，已考试合格的其他科目成绩作废。
+        </view>
+    </view>
+</view>

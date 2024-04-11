@@ -1,0 +1,33 @@
+/* pages/light/light.wxss */
+.light-con {  
+    background: #F7F9FC;
+    width: 100%;
+    font-size: 26rpx;
+    font-family: PingFangSC-Regular, PingFang SC;
+    color: #666666;
+}
+
+.light-con video {
+    width: 100%;
+    height: 400rpx;
+}
+
+.explain-box {
+    margin: 30rpx;
+}
+.explain-box .explain-top {
+    padding: 40rpx 30rpx;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 8rpx;
+    margin-bottom: 30rpx;
+}
+.explain-box .explain-top view {
+    line-height: 1.6;
+}
+.explain-box .explain-top .title {
+    margin-bottom: 20rpx;
+    font-weight: 700;
+    font-size: 30rpx;
+    color: #333;
+}

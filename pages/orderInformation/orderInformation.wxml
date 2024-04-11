@@ -1,0 +1,26 @@
+<view class="content-top">
+    <view>
+        <view class="nav-top">订单{{ status==3?'已完成':'使用中' }} </view>
+        <view class="nav-num">订单编号：{{orderMsg.id}}</view>
+    </view>
+</view>
+<view class="content">
+    <view>
+        <view class="nav-time">购买时长：<text>{{orderMsg.initDuration}}分钟</text></view>
+        <view class="nav-money">消费金额：<text>{{orderMsg.amountMoney}}元</text></view>
+        <view class="hrShow"></view>
+        <view class="nav-ordertime">下单时间：<text>{{ orderMsg.createTime }}</text></view>
+        <view class="nav-pad">支付方式：<text>在线支付</text></view>
+    </view>
+    <view wx:if="{{ status==2||status==3 }}">
+        <view class="contentInfo">
+            <view class="nav-time">开始时间：<text>{{orderMsg.startTime}}</text></view>
+            <view class="nav-endtime">结束时间：<text>{{ orderMsg.endTime||'' }}</text></view>
+            <view class="nav-usetime">已使用时长：<text>{{orderMsg.useDuration}}分钟</text></view>
+            <view class="nav-surplustime">剩余使用时长：<text>{{orderMsg.remainDuration}}分钟</text></view>
+        </view>
+    </view>
+    <block wx:if="{{ status==3 }}">
+        <button bindtap="useMsg">使用记录</button>
+    </block>
+</view>

@@ -1,0 +1,9 @@
+<view class="tab-bar">
+  <view bindtap="switchTab" data-path="{{ item.pagePath }}" data-index="{{ index }}" style="color: {{ selected===index ? selectedColor : color }};" wx:for="{{ list }}" wx:key="index" class="tab-bar-item">
+    <image wx:if="{{ index!==1 }}" mode="widthFix" src="{{ selected===index ? item.selectedIconPath : item.iconPath }}"></image>
+    <view bindtap="scanCode" wx:if="{{ index===1 }}" class="code">
+      <image mode="widthFix" src="/static/images/code.png"></image>
+    </view>
+    <view wx:else> {{ item.text }} </view>
+  </view>
+</view>

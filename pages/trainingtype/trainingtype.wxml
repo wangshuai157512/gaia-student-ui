@@ -1,0 +1,76 @@
+<view class="tool-nav">
+  <view class="tap-title">
+    <view bindtap="tapType" class="left">{{ typeName }} <view></view>
+    </view>
+    <view class="right">总用时{{ info.trainTimeDuration||'' }}分钟</view>
+  </view>
+  <!-- <view class="container-btn">
+    <view wx:for="{{ project }}" bindtap="tapProject" data-value="{{ item.value }}" data-index="{{ index }}" wx:key="index" class="{{ current===index?'actv':'' }}">{{ item.label }}</view>
+  </view> -->
+</view>
+<view wx:if="{{ info&&info.projectList.length }}" class="module_1">
+  <view class="car">
+    <view>
+      <view>训练次数</view>
+      <view>{{ info.trainNum }}次</view>
+      <image mode="widthFix" src="../../static/images/bg-01.png"></image>
+    </view>
+    <view>
+      <view>模考通过次数</view>
+      <view>{{ info.passCount }}次</view>
+      <image mode="widthFix" src="../../static/images/bg-02.png"></image>
+    </view>
+    <view>
+      <view>通过率</view>
+      <view>{{ info.passRate }}</view>
+      <image mode="widthFix" src="../../static/images/bg-03.png"></image>
+    </view>
+  </view>
+  <view wx:for="{{ info.projectList }}" wx:key="index" class="detail_container">
+    <view class="title">
+      <text style="color: #333333;">第{{ index+1 }}次</text>
+      <view>用时{{ item.trainTimeDuration }}分</view>
+      <text style="color: #ED5A01">{{ item.trainScore }}分</text>
+    </view>
+    <view wx:if="{{ item.judgeList.length }}" wx:for="{{ item.judgeList }}" wx:for-item="items" wx:key="index" class="item">
+      <view class="b">{{ index+1 }}</view>
+      <!-- <view class="name">直角转弯</view> -->
+      <view class="detail">{{ items.trainProjectName }}</view>
+      <view class="branch">-{{ items.trainJudgeScore }}分</view>
+      <image mode="widthFix" src="../../static/images/tra.png"></image>
+    </view>
+  </view>
+
+
+</view>
+<block wx:elif="{{ info&&info.subjectList.length }}">
+  <view wx:for="{{ info.subjectList }}" wx:key="index" class="module_2">
+    <view class="title">
+      <text>项目名称</text>
+      <text>训练次数</text>
+      <text>训练用时</text>
+    </view>
+    <view class="item">
+      <text>{{ item.projectName }}</text>
+      <text>{{ item.trainNum }}</text>
+      <text>{{ item.trainTimeDuration }}分</text>
+    </view>
+  </view>
+</block>
+<view style="text-align: center;" wx:else>暂无数据</view>
+<page-container show="{{show}}" round="{{round}}" duration="{{duration}}" position="{{position}}" custom-style="{{customStyle}}">
+  <view class="content-bot">
+    <view class="top">
+      <text class="left">请选择要查看的训练项目</text>
+      <text class="right">{{ typeNameList[type] }}</text>
+    </view>
+    <view wx:for="{{ project }}" wx:key="index" bindtap="setProject" data-value="{{ item.value }}" data-label="{{ item.label }}" class="project-item {{ typeName==item.label?'select':'' }}">{{ item.label }}</view>
+    <!-- <view class="project">
+      <view class="project-item select">部件学习</view>
+      <view class="project-item">部件学习</view>
+      <view class="project-item">部件学习</view>
+      <view class="project-item">部件学习</view>
+    </view> -->
+  </view>
+  <view bindtap="handleClose" class="close">取消</view>
+</page-container>

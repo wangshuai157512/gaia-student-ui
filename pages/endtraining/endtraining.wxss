@@ -1,0 +1,306 @@
+.contaner,
+.contaner_page {
+  width: 610rpx;
+  border-radius: 20rpx;
+  background-color: white;
+  margin: 40rpx auto;
+  box-sizing: border-box;
+  padding-top: 2rpx;
+}
+
+.bh {
+  margin: 30rpx 0;
+  text-align: center;
+  font-weight: 400;
+  font-size: 30rpx;
+  color: #2B9CE8;
+}
+
+.bh image {
+  width: 30rpx;
+  height: auto;
+}
+
+.contaner .image {
+  /* margin-top: 40rpx; */
+}
+
+.bot {
+  /* height: 160rpx; */
+}
+
+.bot .line-spre {
+  width: 100%;
+  height: 30rpx;
+  position: relative;
+
+}
+
+.line-spre::after {
+  content: "";
+  width: 570rpx;
+  height: 2rpx;
+  border-top: 2rpx dashed #e0e0e0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 9;
+}
+
+.line-spre .p {
+  width: 30rpx;
+  height: 15rpx;
+  background-color: #F7F9FC;
+  border-radius: 30rpx 30rpx 0 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.line-spre .l {
+  transform: rotate(90deg);
+  left: -10rpx;
+}
+
+.line-spre .r {
+  transform: rotate(-90deg);
+  right: -8rpx;
+}
+
+.details {
+  width: 100%;
+  padding: 30rpx;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.details>view {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.details .item {
+  color: #333333;
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
+}
+
+.xl {
+  width: 100%;
+  /* height: 130rpx; */
+  display: flex;
+  padding: 50rpx 30rpx;
+  /* box-sizing: border-box; */
+  position: relative;
+}
+
+.xl::after {
+  content: "";
+  width: 2rpx;
+  height: 70rpx;
+  background: #b6b6b6;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.xl>view {
+  flex: 1;
+}
+
+.xl>view text {
+  text-align: center;
+  display: block;
+  font-size: 36rpx;
+  color: #333333;
+}
+
+.xl>view .ts {
+  color: #999999;
+  font-size: 24rpx;
+  margin-bottom: 10rpx;
+}
+
+.btn-btom {
+  margin-top: 160rpx;
+}
+
+.btn-btom text {
+  display: block;
+  font-size: 24rpx;
+  text-align: center;
+  color: #999999;
+}
+
+.btn-btom .pay-btn {
+  line-height: 80rpx;
+  width: 670rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  margin: 20rpx auto;
+  background: #2B9CE8;
+  color: #FFFFFF;
+  font-size: 40rpx;
+  text-align: center;
+}
+
+.save-con {
+  width: 750rpx;
+  /* height: 476rpx; */
+  /* background: #F7F9FC;
+  border-radius: 20px 20px 0px 0px; */
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  padding: 30rpx 60rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  color: #666;
+  z-index: 99;
+}
+
+.save-con .share-friends {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 40rpx;
+}
+
+.save-con .save-img-box {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30rpx;
+}
+
+.save-con .save-img-box button {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  padding: 0;
+  border: 0;
+  margin-bottom: 10rpx;
+}
+
+.save-con .save-img-box image {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+}
+
+.save-con .bg_btn {
+  background: #fff;
+  font-size: 36rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  color: #666666;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.page-container-content {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  animation-name: animation;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes animation {
+  0% {
+    transform: translateY(-804rpx);
+  }
+
+  100% {
+    transform: translateY(0rpx);
+  }
+}
+
+.page-container-content .line-spre .p {
+  background-color: rgb(74 74 75);
+}
+
+.page-container-content .bg_avatar {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 80rpx;
+  margin: 30rpx auto;
+  display: block;
+}
+
+.page-container-content .school text {
+  display: block;
+  text-align: center;
+}
+
+.page-container-content .bot {
+  height: 180rpx;
+}
+
+.page-container-content .school .title {
+  color: #333333;
+  font-size: 36rpx;
+  margin-top: 20rpx;
+  font-weight: 600;
+}
+
+.page-container-content .school .tt {
+  font-size: 26rpx;
+  color: #666666;
+  margin-top: 10rpx;
+}
+
+.page-container-content .bh {
+  margin: 18rpx 0;
+}
+
+.page-container-content .xl {
+  width: auto;
+}
+
+.page-container-content .xls {
+  display: flex;
+  padding: 30rpx 30rpx 50rpx;
+}
+
+
+.page-container-content .xls>view .ts {
+  font-size: 22rpx;
+  color: #333333;
+  font-weight: 400;
+  margin-bottom: 12rpx;
+}
+
+.page-container-content .xls>view text {
+  text-align: left;
+  display: block;
+  font-size: 22rpx;
+  color: #333333;
+  font-weight: 300;
+}
+
+canvas {
+  width: 610rpx;
+  height: 376px;
+  border-radius: 20rpx;
+  position: fixed;
+  top: 0;
+  transform: translateX(-610rpx);
+}
+
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
+}

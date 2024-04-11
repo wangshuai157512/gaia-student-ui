@@ -1,0 +1,57 @@
+<view class="banner">
+  <view class="avatar-container">
+    <!-- <view class="avatar" bindtap="handlePhoto">
+      <open-data style="width:100%;height: auto;" type="userAvatarUrl"></open-data>
+    </view> -->
+    <image class="avatar" src="{{ userInfo.photoaddr }}" bindtap="handlePhoto"></image>
+    <view class="avatar-right">
+      <!-- <open-data type="userNickName" class="t"></open-data> -->
+      <view class="t">{{ userInfo.nickName }}</view>
+      <view class="b">精英学员小蜜，您的学习专家</view>
+    </view>
+  </view>
+</view>
+<view class="count">
+  <view class="nav-count">
+    <view class="btn-container">
+      <view bindtap="subTap" data-id="{{ 1 }}" class="left-btn {{ btnCount=='1'?'btn-actv':'' }}">科二</view>
+      <view bindtap="subTap" data-id="{{ 2 }}" class="right-btn {{ btnCount=='2'?'btn-actv':'' }}">科三</view>
+    </view>
+    <view bindtap="handleStatisticsTap" class="check">查看全部
+      <image mode="widthFix" src="../../static/images/arrow.png"></image>
+    </view>
+  </view>
+  <view class="content-count">
+    <view>
+      <view>训练时长</view>
+      <view>{{ count.trainDuration }}h</view>
+    </view>
+    <view>
+      <view>模考次数</view>
+      <view>{{ count.trainCount||0 }}次</view>
+    </view>
+    <view>
+      <view>通过率</view>
+      <view>{{ count.passRate||0 }}%</view>
+    </view>
+    <view>
+      <navigator class="btn" url="../../package/pages/appointment/appointment">
+        预约训练
+      </navigator>
+      <view class="col">提高通过率</view>
+    </view>
+  </view>
+</view>
+
+<view class="menu-container">
+  <navigator url="{{ item.path }}" wx:key="index" wx:for="{{ menu }}" class="menu-item">
+    <view>
+      <image mode="widthFix" class="ioc" src="{{ item.imgUrl }}"></image>
+      <text>{{ item.name }}</text>
+    </view>
+    <image mode="widthFix" class="iocs" src="../../static/images/arrow.png"></image>
+  </navigator>
+</view>
+<view wx:if="{{ isGetUserInfo }}" class="model">
+  <view bindtap="getUserProfile" class="model-btn">获取用户头像</view>
+</view>

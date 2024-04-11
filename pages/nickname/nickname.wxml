@@ -1,0 +1,9 @@
+<!--pages/nickname/nickname.wxml-->
+<view class="nickname-con">
+    <view>
+        <input class="nickname" value="{{nickname}}" bindinput="changeInput" />
+    </view>
+    <view class="bg_btn" bindtap="upStudentNickName">
+        确认
+    </view>
+</view>

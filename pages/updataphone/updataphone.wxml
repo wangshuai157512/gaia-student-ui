@@ -1,0 +1,33 @@
+<!--pages/updataphone/updataphone.wxml-->
+<view class="phone-con">
+    <view class="content" wx:if="{{step===0 || step===1}}">
+        <view>为了保护账号安全</view>
+        <view class="mb60">您要验证原有手机号的有效性！</view>
+        <view>
+            点击发送短信按钮，将会发送一条有验证码的短信至原有手机号：{{startPhone}}
+        </view>
+    </view>
+    <view class="content" wx:if="{{step===2}}">
+        <view class="mb60">原有手机号：{{startPhone}}</view>
+        <view>
+            输入您要更换的手机号码
+        </view>
+    </view>
+    <view class="content" wx:if="{{step===3}}">
+        <view>为了保护账号安全</view>
+        <view class="mb60">请使用手机号：{{query.phone}} 获取验证码！</view>
+    </view>
+    <view class="code" wx:if="{{step!==0}}">
+        <input placeholder="请输入新手机号"  maxlength="11" type='number' wx:if="{{step===2}}" bindinput="changePhone">
+        </input>
+        <input placeholder="请输入验证码"  maxlength="6" type='number' bindinput="changeCode" wx:else>
+            <view class="line" wx:if="{{step===1 || step===3}}"></view>
+            <view class="btn-code" wx:if="{{(step===1 || step===3) && time}}">{{time}}秒后重发</view>
+            <view bindtap="startTime" class="btn-code" style="color: {{!time?'#1677FF':''}}" wx:if="{{(step===1 || step===3) && !time}}">重发验证码</view>
+        </input>
+    </view>
+    <view class="bg_btn" bindtap="{{step===1?'handleNext':step===3?'handleSubmit':'handleGetCode'}}">
+        {{step===1?'下一步':step===3?'提交':'获取验证码'}}
+    </view>
+
+</view>

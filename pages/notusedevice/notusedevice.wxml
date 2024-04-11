@@ -1,0 +1,4 @@
+<image src="../../static/images/icon_error.png"></image>
+<view class="warn_info">登录失败</view>
+<view class="warn_text">当前设备正在使用！</view>
+<button bindtap="goBack" class="bg_btn">使用其他设备</button>

@@ -1,0 +1,99 @@
+<!--/* 我的-我的预约 */-->
+<view class='swiper-tab'>
+  <view class="swiper-tab-item {{queryForm.equipmentType== index ? 'active' : ''}}" wx:for="{{equipmentTypeList}}" wx:key="index" data-current="{{index}}" bindtap="swichNav">
+    {{item}}
+  </view>
+</view>
+
+<view wx:if="{{datalist && datalist.length > 0}}" class="content">
+  <view class="list-item-body" wx:for="{{datalist}}" wx:key="index">
+    <view class="l-i-b-title">
+      <!-- <text>{{equipmentTypeList[queryForm.equipmentType]}}</text> -->
+
+    </view>
+    <view style="justify-content: normal;" wx:if="{{ queryForm.equipmentType == 0 }}" class="l-i-b-title">
+      <text><text class="subtitle">训练时间：</text>{{item.trainDate}}</text>
+      <text style="margin-left: 12rpx;">{{ item.startTime }}-{{ item.endTime }}</text>
+    </view>
+    <view class="l-i-b-title" wx:if="{{queryForm.equipmentType == 3&&item.trainSubject==3}}">
+      <view class="subtry">
+        <text class="subtitle">教练姓名：</text>{{item.coachName}}
+      </view>
+    </view>
+    <view class="l-i-b-title" wx:if="{{queryForm.equipmentType == 3&&item.trainSubject==3}}">
+      <view class="subtry" style="width: 100%;">
+        <text class="subtitle">教练电话：</text>{{item.coachPhone}}
+      </view>
+    </view>
+  
+    <view wx:else class="l-i-b-title">
+      <view style="display: flex;">
+        <text class="subtitle">训练日期：</text>
+        {{item.trainDate}}<text style="margin-left: 6rpx;" wx:if="{{queryForm.equipmentType == 1}}">({{item.totalTimeDuration}}分钟)</text>
+      </view>
+      <text wx:if="{{queryForm.equipmentType == 2}}" class="l-i-b-title-money">￥{{item.amount}}</text>
+      <!-- <text wx:if="{{item.status == 2}}">训练进度：{{ (item.progress || 0)+'%('+ (item.totalTrainTime || 0) + 'h/'+ (item.totalTrainTime || 0) +'h)'}}</text> -->
+      <text class="code-actav " wx:if="{{item.status == 1 && queryForm.equipmentType == 1}}">{{ item.verifyCode||'' }}</text>
+    </view>
+
+
+    <view class="l-i-b-title" wx:if="{{queryForm.equipmentType == 2}}">
+      <view class="subtry">
+        <text class="subtitle">训练时长：</text>{{item.totalTimeDuration || 0}}{{item.chargeWay==0?'分钟':"圈" }}
+      </view>
+      <view class="subtry">
+        <text class="subtitle">计费类型：</text>{{item.chargeWay==0?'按时':"按圈" }}计费
+      </view>
+    </view>
+    <view class="l-i-b-title">
+      <view class="subtry"  wx:if="{{queryForm.equipmentType == 3}}">
+        <text class="subtitle">训练时间：</text>{{item.startTime}}-{{item.endTime}}
+      </view>
+    </view>
+    <view class="l-i-b-title" wx:if="{{queryForm.equipmentType != 3}}">
+      <view class="subtry">
+        <text class="subtitle">训练车型：</text>{{item.carType ||''}}
+      </view>
+    </view>
+    <view class="l-i-b-title">
+      <view class="subtry" wx:if="{{queryForm.equipmentType == 2 || queryForm.equipmentType == 3}}">
+        <text class="subtitle">训练科目：</text>{{item.trainSubject==2?'科目二':'科目三'}}
+      </view>
+    </view>
+    <view class="l-i-b-title">
+      <!-- <text>预约时长：{{item.totalTimeDuration || 0}}分</text> -->
+      <text><text class="subtitle">训练地点：</text>{{item.drvSchoolName}}</text>
+    </view>
+    <!-- 显示车牌号 -->
+    <view class="l-i-b-title" wx:if="{{queryForm.equipmentType == 3&&item.trainSubject==2}}">
+      <view class="subtry">
+        <text class="subtitle">训练车辆：</text>{{item.hphm}}
+      </view>
+    </view>
+    <view class="l-i-b-title-last">
+      <text>{{item.createTime}}</text>
+      <button wx:if="{{item.status == 1 }}" class="l-i-b-title-last-btn" size="mini" bindtap="handleShowDialog" data-current="{{item.id}}">取消预约</button>
+      <!-- <text wx:else>{{queryForm.equipmentType == 1?item.verifyCode||'':''}}</text> -->
+      <text wx:else style="color: {{item.status == 1 ? 'rgb(255 179 86);' : item.status == 2 ? 'rgb(106 219 109);' : item.status == 3 ? '#F44D4D': item.status == 4 ? '#999999': '#58BB96'}}">{{item.statusName}}</text>
+    </view>
+  </view>
+</view>
+
+<view wx:else>
+  <!-- <view wx:if="{{queryForm.equipmentType == 1 && myinfo.applyAuditStatus == 0}}" class="nodata">
+    <image mode="widthFix" src="../../../static/images/robot_to_auth.png"></image>
+    <view>您还不是驾校学员，暂时无法预约机器人教练哦！</view>
+    <view class="imm-res-btn" bindtap="toAuth">
+      去认证
+    </view>
+  </view> -->
+
+  <view class="nodata">
+    <image mode="widthFix" src="../../../static/images/nodata.png"></image>
+    <view>
+      {{queryForm.equipmentType == 0 ? ' 没有预约智能模拟器！': '' }} {{queryForm.equipmentType==1 ? '没有预约机器人教练！' : '' }}{{queryForm.equipmentType==2 ? '没有预约易学通！' : '' }} </view>
+    <view class="imm-res-btn" bindtap="resbtn">
+      立即预约
+    </view>
+  </view>
+</view>

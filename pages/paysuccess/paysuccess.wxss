@@ -1,0 +1,52 @@
+/* pages/paysuccess/paysuccess.wxss */
+page {
+  background-color: white;
+}
+
+image {
+  width: 210rpx;
+  height: auto;
+  display: block;
+  margin: 30rpx auto 15rpx;
+}
+
+.success_text {
+  width: 80%;
+  margin: auto;
+  height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #000000;
+  border-bottom: 2rpx dashed #cfcfcf;
+}
+
+.container-list {
+  width: 70%;
+  margin: 30rpx auto;
+}
+
+.container-list>view {
+  display: flex;
+  margin-top: 30rpx;
+  justify-content: space-between;
+  color: #000000;
+}
+
+.rol {
+  color: red;
+}
+
+.container-list>view :first-child {
+  color: #5E676C;
+  font-size: 30rpx;
+}
+
+/* .container-list>view :last-child {
+  color: #000000;
+  font-size: 30rpx;
+} */
+
+.bg_btn {
+  background: #2B9CE8;
+  margin-top: 120rpx;
+}

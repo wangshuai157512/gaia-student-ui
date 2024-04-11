@@ -1,0 +1,45 @@
+/* components/videoList/videoList.wxss */
+.video-list-con{
+    background: #fff;
+    padding: 20rpx 24rpx;
+    box-sizing: border-box;
+    border-radius: 8rpx;
+}
+.video-list-con .titel-box {
+    display: flex;
+    justify-content: space-between;
+}
+.video-list-con .titel-box .title{
+    font-weight: 700;
+    font-size: 30rpx;
+    color: #333;
+}
+.video-list-con .titel-box .operate {
+    display: flex;
+}
+.video-list-con .titel-box .operate image{
+    width: 42rpx;
+    height: 42rpx;
+    margin-left: 8rpx;
+}
+
+.video-list-con .img-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.video-list-con .img-box .item {
+    width: 300rpx;
+    margin-top: 20rpx;
+}
+.video-list-con .img-box .item .img {
+    width: 300rpx;
+    height: 180rpx;
+    border-radius: 8rpx;
+    margin-bottom: 16rpx;
+    overflow: hidden;
+}
+.video-list-con .img-box .item .img image {
+    width: 100%;
+    height: 100%!important;
+}

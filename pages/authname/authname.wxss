@@ -1,0 +1,71 @@
+/* pages/authname/authname.wxss */
+
+.authname-con {
+    background: #fff;
+    font-size: 34rpx;
+    color: #333;
+}
+.authname-con .explain-con {
+    background: #F7F9FC;
+    padding: 30rpx 40rpx 30rpx 76rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+.authname-con .explain-con image {
+    width: 28rpx;
+    height: 28rpx;
+    position: absolute;
+    top: 34rpx;
+    left: 40rpx;
+}
+.authname-con .explain-con view {
+    font-size: 22rpx;
+    color: #999;
+}
+.authname-con .bg_btn {
+    position: absolute;
+    bottom: 10%;
+    left: 60rpx;
+}
+.authname-con .authname {
+    height: 96rpx;
+    line-height: 96rpx;
+    padding: 0 48rpx;
+}
+
+/* 认证成功 */
+/* pages/authSuccess/authsuccess.wxss */
+.auth-success-con {
+    margin: 40rpx 60rpx;
+    text-align: center;
+ }
+ .auth-success-box {
+     width: 630rxp;
+     height: 634rpx;
+     background: #fff;
+     border-radius: 8rpx;
+     font-size: 30rpx;
+     color: #666;
+ }
+ .auth-success-box image {
+     width: 160rpx;
+     height: 160rpx;
+     border-radius: 50%;
+     display: inline-block;
+     margin-top: 120rpx;
+ }
+ .auth-success-box .title {
+     font-size: 36rpx;
+     font-weight: bold;
+     color: #00B578;
+     margin-top: 60rpx;
+     margin-bottom: 40rpx;
+ }
+ .auth-success-box text {
+     color: #333;
+     line-height: 1.8;
+ }
+ .auth-success-con .bg_btn {
+     position: absolute;
+     bottom: 10%;
+ }

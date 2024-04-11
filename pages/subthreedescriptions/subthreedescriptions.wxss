@@ -1,0 +1,27 @@
+/* pages/study/coursedescriptions/coursedescriptions.wxss */
+page{
+    width: 100%;
+    background: #F7F9FC;
+    font-size: 26rpx;
+    font-family: PingFangSC-Regular, PingFang SC;
+    color: #666666;
+}
+
+.descriptions-con {
+    margin: 30rpx 40rpx;
+}
+.descriptions-con .descriptions {
+    background: #fff;
+    padding: 40rpx 30rpx;
+    border-radius: 8rpx;
+}
+.descriptions-con .descriptions .title {
+    font-weight: 700;
+    margin-bottom: 20rpx;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.descriptions-con .descriptions view {
+    line-height: 1.6;
+}

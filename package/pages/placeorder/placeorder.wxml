@@ -1,0 +1,93 @@
+<view class="banner">
+  <image mode="widthFix" src="../../static/images/car.png"></image>
+  <view wx:if="{{ !isNewOrder }}" class="notice">
+    <image mode="widthFix" src="../../static/images/notice.png"></image>
+    您已提前预约，预约详情如下
+  </view>
+</view>
+<view class="menu-container">
+  <!-- 预览状态 -->
+  <block wx:if="{{ !isNewOrder }}">
+    <view wx:key="index" wx:for="{{ menu }}" class="menu-item">
+      <view>
+        <view style="display: flex;align-items: center;">
+          <image mode="widthFix" class="ioc" src="{{ item.imgUrl }}"></image>
+          <text wx:if="{{ index===menu.length-1 }}">{{ item.label }}{{ menu[2].value==='按圈计费'? '圈数':'时长' }}</text>
+          <text wx:else>{{ item.label }}</text>
+        </view>
+        <text wx:if="{{ index===menu.length-1 }}" class="value">{{ item.value }}{{ menu[2].value==='按圈计费'? '圈':'分钟' }}</text>
+        <text wx:else class="value">{{ item.value }}</text>
+      </view>
+      <!-- <image mode="widthFix" class="iocs" src="../../static/images/arrow.png"></image> -->
+    </view>
+  </block>
+  <!-- 编辑状态 -->
+  <view style="display: flex;flex-wrap: wrap;" wx:else>
+    <picker wx:if="{{ index!==0 && index!==1 }}" style="order:{{ index }}" data-key="{{ index }}" wx:key="index" wx:for="{{ menu.length-1 }}" bindchange="bindPickerChange" range="{{ options[index] }}">
+      <view class="menu-item">
+        <view style="width:90%">
+          <view style="display: flex;align-items: center;">
+            <image mode="widthFix" class="ioc" src="{{ menu[index].imgUrl }}"></image>
+            <text>请选择{{ menu[index].label }}</text>
+          </view>
+          <text class="value">{{ menu[index].value }}</text>
+        </view>
+        <image mode="widthFix" class="iocs" src="../../static/images/arrow.png"></image>
+      </view>
+    </picker>
+    <view style="order:0" class="menu-item">
+      <view style="width:90%">
+        <view style="display: flex;align-items: center;">
+          <image mode="widthFix" class="ioc" src="{{ menu[0].imgUrl }}"></image>
+          <text>{{ menu[0].label }}</text>
+        </view>
+        <text class="value">{{ menu[0].value }}</text>
+      </view>
+    </view>
+    <view style="order:1" class="menu-item">
+      <view style="width:90%">
+        <view style="display: flex;align-items: center;">
+          <image mode="widthFix" class="ioc" src="{{ menu[1].imgUrl }}"></image>
+          <text>{{ menu[1].label }}</text>
+        </view>
+        <text class="value">{{ menu[1].value }}</text>
+      </view>
+    </view>
+    <view style="order:4" class="menu-item">
+      <view style="width:90%">
+        <view style="display: flex;align-items: center;">
+          <image mode="widthFix" class="ioc" src="{{ menu[menu.length-1].imgUrl }}"></image>
+          <text>请输入{{ menu[menu.length-1].label }}{{ menu[2].value==='按圈计费'? '圈数':'时长' }}</text>
+        </view>
+        <view style="display: flex;align-items: center;">
+          <input value="{{ menu[menu.length-1].value }}" bindinput="bindInputChange" style="width:120rpx;text-align: right;" class="value" type="number" />
+          <text style="color: black;">{{ menu[2].value==='按圈计费'? '圈':'分钟' }}</text>
+        </view>
+        <!-- <text style="position: absolute;right: 0;font-size: 20rpx;color: #999999;bottom: -24rpx;">最短训练时长为20分钟</text> -->
+        <!-- <text class="value">{{ menu[menu.length-1].value }}</text> -->
+      </view>
+      <image mode="widthFix" class="iocs" src="../../static/images/arrow.png"></image>
+    </view>
+  </view>
+
+
+</view>
+<view class="bot">
+  <view class="pay-amount">
+    <view class="left">
+      <text>￥{{ amount }}</text>
+    </view>
+    <view class="right">
+      <text>{{ tipsMsg[0] }}</text>
+      <text>{{ tipsMsg[1] }}</text>
+    </view>
+  </view>
+  <view wx:if="{{ !isAccordCar }}" class="remind">
+    <view>当前车型与预约车型不相符，您可以</view>
+    <view><text class="mark">①更换和预约车型相符的车辆</text> 或 <text class="mark">②在此车辆上，重新下单</text></view>
+  </view>
+  <view wx:if="{{ !(menu[0].value&&menu[1].value&&menu[2].value&&menu[3].value) }}" class="pay-btn disb">去支付</view>
+  <view wx:elif="{{ isAccordCar }}" bindtap="submit" class="pay-btn">去支付</view>
+  <view wx:else bindtap="again" class="pay-btn">重新下单</view>
+  <view class="login_tips">支付成功即可登录系统</view>
+</view>

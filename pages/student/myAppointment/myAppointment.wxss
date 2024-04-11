@@ -1,0 +1,135 @@
+/* 我的-我的预约 */
+
+.swiper-tab {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 53rpx;
+  font-size: 28rpx;
+  z-index: 1;
+  background: #ffffff;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+
+.swiper-tab .swiper-tab-item {
+  float: left;
+  position: relative;
+  height: 50rpx;
+  line-height: 40rpx;
+  /* width: 45%; */
+  margin: 0 4.5%;
+  text-align: center;
+  font-size: 28rpx;
+  color: #5E676C;
+}
+
+.swiper-tab .active {
+  color: #1677FF;
+
+}
+
+.swiper-tab .active::after {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 6rpx;
+  background: #1677FF;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+.content {
+  margin-top: 90rpx;
+  margin-bottom: 2.5%;
+  width: 100%;
+}
+
+.content .list-item-body {
+  width: 85%;
+  /* height: 250rpx; */
+  margin-bottom: 2.5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 2.5%;
+  border-radius: 20rpx;
+  background: #FFFFFF;
+  font-size: 28rpx;
+}
+
+.l-i-b-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.5%;
+}
+
+.l-i-b-title:nth-child(1) text:nth-child(1) {
+  font-size: 32rpx;
+  /* font-weight: 550; */
+}
+
+
+.l-i-b-title-last {
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #cecece;
+  color: #999999;
+}
+
+
+
+.l-i-b-title-last-btn {
+  font-size: 28rpx !important;
+  background-color: #2B9CE8;
+  line-height: 2 !important;
+  margin: 0;
+  color: #FFFFFF !important;
+  padding: 0 20rpx !important;
+  border-radius: 40rpx;
+}
+
+.nodata {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 150rpx;
+}
+
+.nodata image {
+  width: 50%;
+}
+
+.nodata view {
+  width: 100%;
+  text-align: center;
+}
+
+.nodata .imm-res-btn {
+  margin-top: 10rpx;
+  font-size: 34rpx;
+  font-weight: 550;
+  color: #1677FF
+}
+
+.code-actav {
+  color: #2B9CE8;
+}
+
+.l-i-b-title-money {
+  color: red;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: #5E676C;
+}
+
+.subtry {
+  width: 50%;
+}

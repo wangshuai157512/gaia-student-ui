@@ -1,0 +1,34 @@
+<!--pages/coach/coach.wxml-->
+<view class="coach-con">
+    <view class="card" wx:for="{{coachMsg}}" wx:key="index">
+        <view class="card-top">
+            {{index==='sub2Coach'?'科目二':index==='sub3Coach'?"科目三":"模拟器"}}教练
+        </view>
+        <view class="card-bottom">
+            <view class="card-bottom-l">
+                <image class="photo" src="{{item.photo?baseUrl+item.photo:normalPhoto}}"></image>
+                <view class="introduce">
+                    <view>
+                        <view class="title">{{item.name}}</view>
+                        <view class="age" wx:if="{{item.drivingAge}}">
+                            <view class="num">{{item.drivingAge}}</view>年教龄
+                        </view>
+                    </view>
+                    <view>
+                        <view class="stu">{{item.studentCount}}学员数</view>
+                        <view class="score">
+                            <image src="../../static/images/star.png"></image>{{item.score?item.score:5}}
+                        </view>
+                    </view>
+                    <view>{{item.drvSchoolName}}</view>
+                </view>
+            </view>
+            <view class="card-bottom-r">
+                <view bindtap="handleEvaluate" data-msg="{{ index }}" wx:if="{{item.evaluateCount===0}}">评价教练</view>
+                <view wx:else style="background-color: #FF941A;text-align: center;">已评价</view>
+                <view bindtap="callCoach" data-phone="{{item.telephone}}">联系教练</view>
+            </view>
+
+        </view>
+    </view>
+</view>

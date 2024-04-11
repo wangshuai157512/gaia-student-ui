@@ -1,0 +1,57 @@
+/* pages/orderusagerecord/orderusagerecord.wxss */
+.dateShow {
+    margin: 30rpx auto 0;
+    padding: 15rpx 80rpx;
+    font-size: 26rpx;
+    color: #666666;
+}
+
+/* .content>view {
+    width: 670rpx;
+    background: white;
+    border-radius: 20rpx;
+    background: #FFFFFF;
+    margin: 20rpx auto 0;
+    padding: 15rpx 30rpx;
+    box-sizing: border-box;
+} */
+
+.card-item {
+    width: 670rpx;
+    box-sizing: border-box;
+    margin: 20rpx auto 0;
+    padding: 15rpx 30rpx;
+    border-radius: 20rpx;
+    background-color: white;
+    position: relative;
+}
+
+.car-view {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.car-view .right,
+.car-view .left {
+    font-size: 28rpx;
+    color: #666666;
+}
+
+.car-view .right {
+    text-align: center;
+    color: #666666;
+}
+
+.car-view .car-type {
+    color: #666666;
+    font-size: 28rpx;
+}
+
+.car-view .rightTime {
+    color: #666666;
+    font-size: 36rpx;
+    font-weight: 600;
+}

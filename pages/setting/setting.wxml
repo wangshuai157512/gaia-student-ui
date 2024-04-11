@@ -1,0 +1,83 @@
+<!--pages/setting/setting.wxml-->
+<view class="setting-con">
+    <view class="item" bindtap="handlePhotoAddr">
+        <view>
+            头像
+        </view>
+        <view class="item-r">
+            <view>
+                <image class="photo" src="{{myMsg.photoaddr}}"></image>
+            </view>
+
+            <view>
+                <image class="icon-right" src="{{icon}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="item" bindtap="handleNickName">
+        <view>
+            昵称
+        </view>
+        <view class="item-r">
+            <view>{{myMsg.nickName || userInfo.nickName}}</view>
+            <view>
+                <image class="icon-right" src="{{icon}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="item" bindtap="updataSex">
+        <view>
+            性别
+        </view>
+        <view class="item-r">
+            <view wx:if="{{myMsg.gender}}">{{myMsg.gender==='1'?'男':'女'}}</view>
+            <view>
+                <image class="icon-right" src="{{icon}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="item" bindtap="handlephone">
+        <view>
+            手机号
+        </view>
+        <view class="item-r">
+            <view>{{myMsg.telephone}}</view>
+            <view>
+                <image class="icon-right" src="{{icon}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="item" bindtap="handleAuthName">
+        <view class="item-l">
+            <view>
+                实名认证
+            </view>
+            <view class="status {{statusSty[myMsg.nameAuthAuditStatus]}}">
+                {{statusText[myMsg.nameAuthAuditStatus]}}
+            </view>
+        </view>
+        <view class="item-r">
+            <view>
+                <image class="icon-right" src="{{icon}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="item" bindtap="handleSchool">
+        <view class="item-l">
+            <view>
+                驾校认证
+            </view>
+            <view class="status {{statusSty[myMsg.applyAuditStatus]}}">
+                {{statusText[myMsg.applyAuditStatus]}}
+            </view>
+        </view>
+        <view class="item-r">
+            <view>
+                {{myMsg.drvSchoolName?myMsg.drvSchoolName:''}}
+            </view>
+            <view>
+                <image class="icon-right" src="{{icon}}"></image>
+            </view>
+        </view>
+    </view>
+</view>

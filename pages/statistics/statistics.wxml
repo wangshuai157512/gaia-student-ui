@@ -1,0 +1,186 @@
+<view class='protab swiper-tab'>
+  <view class="swiper-tab-item {{ currentTab==0 ? 'active' : '' }}" data-current="0" catchtap="swichNav">训练时长统计</view>
+  <view class="swiper-tab-item {{ currentTab==1 ? 'active' : '' }}" data-current="1" catchtap="swichNav">扣分项统计</view>
+  <view class="swiper-tab-item {{ currentTab==2 ? 'active' : '' }}" data-current="2" catchtap="swichNav">模拟考试</view>
+</view>
+<view style="height: 80rpx;"></view>
+<view style="height: {{ swiperHeight }}rpx;" class="swiper">
+  <view animation="{{ animationTranslateX }}" class="swiper-container">
+    <view class="swiper-item">
+      <view wx:if="{{ table.simulator.length }}" class="table-container">
+        <view class="title">智能模拟器</view>
+        <view class="table">
+          <view class="tr">
+            <view class="td">项目名称</view>
+            <view class="td">训练时长</view>
+          </view>
+          <view wx:for="{{ table.simulator }}" wx:key="index" class="tr">
+            <view class="td">{{ item.label }}</view>
+            <view class="td">{{ item.value }}</view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{ table.goldCoach.length }}" class="table-container">
+        <view class="title">机器人教练</view>
+        <view class="table">
+          <view class="tr">
+            <view class="td">项目名称</view>
+            <view class="td">训练时长</view>
+          </view>
+          <view wx:for="{{ table.goldCoach }}" wx:key="index" class="tr">
+            <view class="td">{{ item.label }}</view>
+            <view class="td">{{ item.value }}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="swiper-item">
+      <view class="chart-container">
+        <view animation="{{ dedSub2.animationRotateyMain }}" class="chart-tap">
+          <view class="title">
+            科目二扣分项统计
+            <view data-doce="main" data-type="2" catchtap="tapCard">机器人教练
+              <image data-doce="main" data-type="2" mode="widthFix" src="../../static/images/tab-icon.png"></image>
+            </view>
+          </view>
+          <view style="height:654rpx">
+            <ec-canvas wx:if="{{ !!dedChart.sub2MainEc }}" class="chart" canvas-id="mychart-pie1" ec="{{ dedChart.sub2MainEc }}"></ec-canvas>
+          </view>
+        </view>
+        <view animation="{{ dedSub2.animationRotateyBack }}" class="chart-tap back-tap">
+          <view class="title">
+            科目二扣分项统计
+            <view data-doce="back" data-type="2" catchtap="tapCard">智能模拟器
+              <image data-doce="back" data-type="2" mode="widthFix" src="../../static/images/tab-icon.png"></image>
+            </view>
+          </view>
+          <view style="height:654rpx">
+            <ec-canvas wx:if="{{ !!dedChart.sub2BackEc }}" class="chart" canvas-id="mychart-pie2" ec="{{ dedChart.sub2BackEc }}"></ec-canvas>
+          </view>
+        </view>
+      </view>
+      <view class="chart-container">
+        <view animation="{{ dedSub3.animationRotateyMain }}" class="chart-tap">
+          <view class="title">
+            科目三扣分项统计
+            <view data-doce="main" data-type="3" catchtap="tapCard">机器人教练
+              <image data-doce="main" data-type="3" mode="widthFix" src="../../static/images/tab-icon.png"></image>
+            </view>
+          </view>
+          <view style="height:654rpx">
+            <ec-canvas wx:if="{{ !!dedChart.sub3MainEc }}" class="chart" canvas-id="mychart-pie3" ec="{{ dedChart.sub3MainEc }}"></ec-canvas>
+          </view>
+        </view>
+        <view animation="{{ dedSub3.animationRotateyBack }}" class="chart-tap back-tap">
+          <view class="title">
+            科目三扣分项统计
+            <view data-doce="back" data-type="3" catchtap="tapCard">智能模拟器
+              <image data-doce="back" data-type="3" mode="widthFix" src="../../static/images/tab-icon.png"></image>
+            </view>
+          </view>
+          <view style="height:654rpx">
+            <ec-canvas wx:if="{{ !!dedChart.sub3BackEc }}" class="chart" canvas-id="mychart-pie4" ec="{{ dedChart.sub3BackEc }}"></ec-canvas>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="swiper-item">
+      <view class="chart-container">
+        <view animation="{{ passSub2.animationRotateyMain }}" class="chart-tap">
+          <view class="title">
+            科目二模考通过率统计
+            <view data-doce="main" data-type="2" catchtap="tapCard"> 机器人教练
+              <image data-doce="main" data-type="2" mode="widthFix" src="../../static/images/tab-icon.png"></image>
+            </view>
+          </view>
+          <view style="height:654rpx">
+            <ec-canvas wx:if="{{ !!passChart.sub2MainEc }}" class="chart" canvas-id="mychart-pie1" ec="{{ passChart.sub2MainEc }}"></ec-canvas>
+          </view>
+        </view>
+        <view animation="{{ passSub2.animationRotateyBack }}" class="chart-tap back-tap">
+          <view class="title">
+            科目二模考通过率统计
+            <view data-doce="back" data-type="2" catchtap="tapCard">智能模拟器
+              <image data-doce="back" data-type="2" mode="widthFix" src="../../static/images/tab-icon.png"></image>
+            </view>
+          </view>
+          <view style="height:654rpx">
+            <ec-canvas wx:if="{{ !!passChart.sub2BackEc }}" class="chart" canvas-id="mychart-pie2" ec="{{ passChart.sub2BackEc }}"></ec-canvas>
+          </view>
+        </view>
+      </view>
+      <view class="chart-container">
+        <view animation="{{ passSub3.animationRotateyMain }}" class="chart-tap">
+          <view class="title">
+            科目三模考通过率统计
+            <view data-doce="main" data-type="3" catchtap="tapCard">机器人教练
+              <image data-doce="main" data-type="3" mode="widthFix" src="../../static/images/tab-icon.png"></image>
+            </view>
+          </view>
+          <view style="height:654rpx">
+            <ec-canvas wx:if="{{ !!passChart.sub3MainEc }}" class="chart" canvas-id="mychart-pie3" ec="{{ passChart.sub3MainEc }}"></ec-canvas>
+          </view>
+        </view>
+        <view animation="{{ passSub3.animationRotateyBack }}" class="chart-tap back-tap">
+          <view class="title">
+            科目三模考通过率统计
+            <view data-doce="back" data-type="3" catchtap="tapCard">智能模拟器
+              <image data-doce="back" data-type="3" mode="widthFix" src="../../static/images/tab-icon.png"></image>
+            </view>
+          </view>
+          <view style="height:654rpx">
+            <ec-canvas wx:if="{{ !!passChart.sub3BackEc }}" class="chart" canvas-id="mychart-pie4" ec="{{ passChart.sub3BackEc }}"></ec-canvas>
+          </view>
+        </view>
+      </view>
+      <view class="chart-container">
+        <view animation="{{ examDedSub2.animationRotateyMain }}" class="chart-tap">
+          <view class="title">
+            科目二模考扣分统计
+            <view data-doce="main" data-type="2" catchtap="examTapCard">机器人教练
+              <image data-doce="main" data-type="2" mode="widthFix" src="../../static/images/tab-icon.png"></image>
+            </view>
+          </view>
+          <view style="height:654rpx">
+            <ec-canvas wx:if="{{ !!examDedChart.sub2MainEc }}" class="chart" canvas-id="mychart-pie3" ec="{{ examDedChart.sub2MainEc }}"></ec-canvas>
+          </view>
+        </view>
+        <view animation="{{ examDedSub2.animationRotateyBack }}" class="chart-tap back-tap">
+          <view class="title">
+            科目二模考扣分统计
+            <view data-doce="back" data-type="2" catchtap="examTapCard">智能模拟器
+              <image data-doce="back" data-type="2" mode="widthFix" src="../../static/images/tab-icon.png"></image>
+            </view>
+          </view>
+          <view style="height:654rpx">
+            <ec-canvas wx:if="{{ !!examDedChart.sub2BackEc }}" class="chart" canvas-id="mychart-pie4" ec="{{ examDedChart.sub2BackEc }}"></ec-canvas>
+          </view>
+        </view>
+      </view>
+      <view class="chart-container">
+        <view animation="{{ examDedSub3.animationRotateyMain }}" class="chart-tap">
+          <view class="title">
+            科目三模考扣分统计
+            <view data-doce="main" data-type="3" catchtap="examTapCard">机器人教练
+              <image data-doce="main" data-type="3" mode="widthFix" src="../../static/images/tab-icon.png"></image>
+            </view>
+          </view>
+          <view style="height:654rpx">
+            <ec-canvas wx:if="{{ !!examDedChart.sub3MainEc }}" class="chart" canvas-id="mychart-pie3" ec="{{ examDedChart.sub3MainEc }}"></ec-canvas>
+          </view>
+        </view>
+        <view animation="{{ examDedSub3.animationRotateyBack }}" class="chart-tap back-tap">
+          <view class="title">
+            科目三模考扣分统计
+            <view data-doce="back" data-type="3" catchtap="examTapCard">智能模拟器
+              <image data-doce="back" data-type="3" mode="widthFix" src="../../static/images/tab-icon.png"></image>
+            </view>
+          </view>
+          <view style="height:654rpx">
+            <ec-canvas wx:if="{{ !!examDedChart.sub3BackEc }}" class="chart" canvas-id="mychart-pie4" ec="{{ examDedChart.sub3BackEc }}"></ec-canvas>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

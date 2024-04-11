@@ -1,0 +1,4 @@
+{
+    "usingComponents": {"video-list":"../../components/videoList/videoList"},
+    "navigationBarTitleText": "学员小蜜"
+}

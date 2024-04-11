@@ -1,0 +1,17 @@
+/* pages/nickname/nickname.wxss */
+.nickname-con {
+    background: #fff;
+    margin-top: 20rpx;
+    font-size: 34rpx;
+    color: #333;
+}
+.nickname-con .bg_btn {
+    position: absolute;
+    top: 220rpx;
+    left: 60rpx;
+}
+.nickname-con .nickname {
+    height: 96rpx;
+    line-height: 96rpx;
+    padding: 0 48rpx;
+}

@@ -1,0 +1,48 @@
+<!--pages/coach/evaluate/evaluate.wxml-->
+<view class="evaluate-con">
+    <view class="card-bottom">
+        <view class="card-bottom-l">
+                <image class="photo" src="{{baseUrl + item.photo}}"></image>
+                <view class="introduce">
+                    <view>
+                        <view class="title">{{item.name}}</view>
+                        <view class="age" wx:if="{{item.drivingAge}}">
+                            <view class="num">{{item.drivingAge}}</view>年教龄
+                        </view>
+                    </view>
+                    <view>
+                        <view class="stu">{{item.studentCount}}学员数</view>
+                        <view class="score">
+                            <image src="../../static/images/star.png"></image>{{item.score?item.score:5}}
+                        </view>
+                    </view>
+                    <view>{{item.drvSchoolName}}</view>
+                </view>
+            </view>
+    </view>
+    <!-- 评分 -->
+    <view class="star-score">
+        <view class="star-score-box">
+            <view class="label">服务态度</view>
+            <view>
+                <image wx:for="{{5}}" wx:key="index" data-index="{{index}}" bindtap="handleManner" src="{{index<=queryCoach.serveAttitude?activeStar:nomalStar}}"></image>
+            </view>
+        </view>
+        <view class="star-score-box">
+            <view class="label">服务专业度</view>
+            <view>
+                <image wx:for="{{5}}" wx:key="index" data-index="{{index}}" bindtap="handleMajor" src="{{index<=queryCoach.prefessionalLevel?activeStar:nomalStar}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="tarea">
+        <textarea bindinput="changeMemo" value="{{queryCoach.memo}}" auto-height placeholder="从多个角度评价教练，可以帮助更多学员哦" />
+    </view>
+    <view class="remake">
+        注：仅可对教练评价一次，请谨慎评价！
+    </view>
+    <view class="bg_btn" bindtap="handleSubmit">
+        提交评分
+    </view>
+
+</view>

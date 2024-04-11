@@ -1,0 +1,61 @@
+/* pages/setting/setting.wxss */
+.setting-con {
+    background: #fff;
+    font-size: 30rpx;
+    color: #333;
+    margin-top: 20rpx;
+}
+.setting-con .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 96rpx;
+    line-height: 96rpx;
+    border-bottom: 1px solid #F7F9FC;
+    padding-left: 48rpx;
+    padding-right: 20rpx;
+    box-sizing: border-box;
+}
+.setting-con .item .item-r {
+    display: flex;
+}
+.setting-con .item .photo {
+    width: 56rpx;
+    height: 56rpx;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.setting-con .item .icon-right {
+    width: 48rpx;
+    height: 48rpx;
+    display: inline-block;
+    vertical-align: middle;
+}
+.setting-con .item .item-l {
+    display: flex;
+    align-items: center;
+}
+.setting-con .item .status {
+    text-align: center;
+    width: 80rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    margin-left: 10rpx;
+    font-size: 22rpx;
+    border-radius: 2px;
+    color: #999;
+    background-color:rgba(234, 234, 234);
+}
+.setting-con .item .status.authenticating {
+    color: #FF6010;
+    background-color: rgba(255, 96, 16, 0.1);
+}
+.setting-con .item .status.unpass {
+    color: #FF565E;
+    background-color: rgba(255, 86, 94, 0.1);
+}
+.setting-con .item .status.authentica {
+    color: #2072FD;
+    background-color: rgba(32, 114, 253, 0.1);
+}

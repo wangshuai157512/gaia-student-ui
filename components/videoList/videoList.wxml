@@ -1,0 +1,18 @@
+<!--components/videoList/videoList.wxml-->
+<view class="video-list-con">
+    <view class="titel-box">
+        <view class="title">{{titleOption.title}}</view>
+        <view class="operate" wx:if="{{titleOption.operate}}">
+            <view>{{titleOption.operate}}</view>
+            <image src="{{titleOption.icon}}" bindtap="handleChild"></image>
+        </view>
+    </view>
+    <view class="img-box">
+        <view class="item" wx:for="{{videoList}}" wx:key="index" data-id="{{item.id}}" data-video="{{item.video}}" data-videoScreen="{{item.videoScreen}}" data-remark="{{item.remark}}"  bindtap="handleVideo">
+            <view class="img">
+                <image mode="widthFix" src="{{baseUrl + item.videoScreen}}"></image>
+            </view>
+            <view>{{item[changName]}}</view>
+        </view>
+    </view>
+</view>

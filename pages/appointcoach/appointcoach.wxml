@@ -1,0 +1,10 @@
+<!--pages/appointcoach/appointcoach.wxml-->
+<view class="coach-box">
+  <view class="item" wx:for="{{myCoachSimpleList}}" bind:tap="handleCoach">
+    <image  src="https://jpypt.oss-cn-beijing.aliyuncs.com/photo/2023/12/05/476a59081fe74990aea590aa867c2cce.jpg?Expires=4881756299&OSSAccessKeyId=LTAI5tDPonoFq3HZdXMy3SJS&Signature=%2FBSiMBK%2BaZqLxciNTqy0OfyKtPQ%3D"></image>
+    <view class="con">
+      <view class="name">王教练</view>
+      <view class="msg"><view>C1</view><view class="line"></view> <view>001</view></view>
+    </view>
+  </view>
+</view>

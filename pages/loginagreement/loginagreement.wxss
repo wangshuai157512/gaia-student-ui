@@ -1,0 +1,16 @@
+/* pages/loginagreement/loginagreement.wxss */
+page {
+    background-color: white;
+}
+
+.textcontent {
+    font-size: 24rpx;
+    color: black;
+
+}
+
+.textcontent view {
+    padding: 20rpx 35rpx;
+    letter-spacing: 2rpx;
+    text-align: justify;
+}

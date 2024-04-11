@@ -1,0 +1,41 @@
+<!--pages/orderManagement/orderManagement.wxml-->
+<view class='container'>
+    <view class='orderlength'>
+      <view class='protab swiper-tab'>
+        <view wx:for="{{equipmentTypeList}}" wx:key="{{item.value}}" class="swiper-tab-item {{activeTab==index ? 'active' : ''}}" data-current="{{index}}" data-orderType="{{item.value}}" bindtap="equipmentTypeTab">{{item.lable}}</view>
+      </view>
+        <view class="protab swiper-tab-order">
+          <!-- <scroll-view class="protab swiper-tab-order" scroll-x="true" bindscroll="scroll"> -->
+            <view wx:for="{{orderStatuslist}}" wx:key="index" class="swiper-tab-item-order {{index == currentTab? 'active' : ''}}" data-current="{{index}}" data-status="{{item.value}}" bindtap="swichNav">{{item.lable}}</view>
+          <!-- </scroll-view> -->
+        </view>
+    </view>
+    <view wx:if="{{ orderlist.length }}" class="content">
+        <view wx:for="{{ orderlist }}" wx:key="index" data-status="{{item.status}}" data-id="{{item.id}}">
+          <view class="top-item">
+            <view class="nav-long"><text>订单时长：</text> {{ item.initDuration }}{{item.chargeWay==1?'圈':'分钟'}}</view>
+            <view class="pay-money">￥{{ item.amountMoney }}元</view>
+          </view>
+          <view class="top-item">
+            <view class="nav-long"><text>训练车型：</text> {{ item.carType }}</view>
+            <view class="go-pay" wx:if="{{item.status==8 && item.isOrder}}" data-item="{{item}}" bindtap="handlePay">重新支付</view>
+          </view>
+          <view class="top-item" wx:if="{{item.subject}}">
+             <view class="nav-long"><text>训练科目：</text> {{ statusSubject[item.subject] }}</view>
+          </view>
+          <view class="top-item" wx:if="{{item.useDate}}">
+             <view class="nav-long"><text>练车日期：</text>{{item.useDate}}</view>
+          </view>
+          <view class="nav-long" wx:if="{{item.captcha}}"><text decode="true">&emsp;验证码：</text>{{item.captcha}}</view>
+            <view class="nav-top">下单时间：{{ item.createTime }} <view class="cancel-order" data-id="{{item.id}}" wx:if="{{item.status==8 && item.isOrder}}" bindtap="handleOrdersCancel">取消订单</view></view>
+            <view class="nav-time"><text>订单编号：{{ item.id }} </text> <text style="color:{{ payColor[item.status] }}">{{ payStatus[item.status] }}</text> </view>
+        </view>
+    </view>
+
+    <view wx:else class="nodata">
+        <image mode="widthFix" src="../../static/images/nodata.png"></image>
+        <view>没有相关订单哦！</view>
+    </view>
+
+
+</view>

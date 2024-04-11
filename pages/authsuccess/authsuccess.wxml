@@ -1,0 +1,10 @@
+<!--pages/authSuccess/authsuccess.wxml-->
+<view class="auth-success-con">
+    <view class="auth-success-box">
+        <image src="{{photoaddr}}"></image>
+        <view class="title">您已通过驾校认证</view>
+        <view>驾校地址：<text>{{cityname}}</text></view>
+        <view>驾校名称：<text>{{drvSchoolName}}</text></view>
+    </view>
+    <view class="bg_btn" bindtap="handleRegister">重新认证</view>
+</view>

@@ -1,0 +1,4 @@
+<image src="../../static/images/icon_error.png"></image>
+<view class="warn_info">登录失败</view>
+<view class="warn_text">您还不是驾校学员，暂时不能使用设备哦！</view>
+<navigator class="bg_btn" url="../authstatus/authstatus?applyAuditStatus=0">立即认证</navigator>

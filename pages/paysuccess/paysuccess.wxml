@@ -1,0 +1,9 @@
+<image mode="widthFix" src="../../static/images/paysuccess.png"></image>
+<view class="success_text">恭喜您支付成功！ </view>
+<view class="container-list">
+  <view wx:for="{{ list }}" wx:key="index">
+    <text>{{ item.label }}</text>
+    <text class="{{ index===0?'rol':'' }}">{{ item.value }}</text>
+  </view>
+</view>
+<button bindtap="close" class="bg_btn">关闭</button>

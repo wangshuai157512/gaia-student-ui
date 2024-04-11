@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-index": "../../ivewweapp/index/index",
+    "i-index-item": "../../ivewweapp/index-item/index"
+  },
+  "navigationBarTitleText": "选择城市"
+}

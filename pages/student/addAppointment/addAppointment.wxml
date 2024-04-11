@@ -1,0 +1,69 @@
+<!--pages/student/addAppointment/addAppointment.wxml-->
+<view class='container'>
+  <!-- <view wx:if="{{ formModel.equipmentType == 1 && myinfo.applyAuditStatus == 1 }}" class="no_auth">
+    <view class="no_text">您的驾校认证正在审核，请你耐心等待！</view>
+    <view class="text-btn" bindtap="toAuth">
+      查看进度
+    </view>
+  </view> -->
+
+  <view  class="content">
+    <view class="adv_body">
+      <view class="swiper-con">
+        <swiper style="height: 100%;" bindchange="currentbannerChange">
+          <block wx:for="{{bannerList}}" wx:key="index">
+            <swiper-item>
+              <image src="{{baseUrl+'/' + item.advPhoto}}" alt="" />
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class="dots">
+          <block wx:for="{{bannerList}}" wx:key="index">
+            <view class="dot {{index == currentIndex ? 'active' : ''}}"></view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="form_body">
+      <view class="fb-label">请选择预约设备</view>
+      <view class="fb-content">
+        <picker class="fb-c-piker" bindchange="bindPickerEquipmentTypeChange" value="{{formModel.equipmentType}}" range="{{equipmentTypeList}}">
+          <view class="picker">
+            {{equipmentTypeList[formModel.equipmentType]}}
+          </view>
+        </picker>
+        <image class="fb-c-rtimg" src="../../../static/images/ic-right.png"></image>
+      </view>
+    </view>
+    <!-- wx:if="{{formModel.equipmentType == 1}}" -->
+    <view class="form_body">
+      <view class="fb-label">请选择设备预约地点</view>
+      <view class="fb-content" bindtap="toSlctSchool">
+        {{formModel.drvSchoolName ? formModel.drvSchoolName: '请选择驾校'}}
+      </view>
+    </view>
+    <view class="form_body">
+      <view class="fb-label">请选择预约日期</view>
+      <view class="fb-content">
+        <picker class="fb-c-piker" mode="date" value="{{formModel.appointmentDate}}" bindchange="bindAppointmentDateChange">
+          <view class="picker">
+            {{formModel.appointmentDate}}
+          </view>
+        </picker>
+        <image class="fb-c-rtimg" src="../../../static/images/ic-right.png"></image>
+      </view>
+    </view>
+    <view class="form_body">
+      <view class="fb-label">请选择预约时长</view>
+      <view class="fb-content">
+        <picker class="fb-c-piker" bindchange="bindPickerAppointmentDurationChange" value="{{formModel.appointmentDuration}}" range="{{appointmentDurationList}}">
+          <view class="picker">
+            {{appointmentDurationList[formModel.appointmentDuration]}}h
+          </view>
+        </picker>
+        <image class="fb-c-rtimg" src="../../../static/images/ic-right.png"></image>
+      </view>
+    </view>
+    <button class="form_body-btn" bindtap="submit">预约训练</button>
+  </view>
+</view>

@@ -1,0 +1,165 @@
+/* pages/placeorder/placeorder.wxss */
+.banner {
+  background: #D8F1FF;
+  position: relative;
+}
+
+.banner>image {
+  width: 85%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+.menu-container {
+  width: 670rpx;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  margin: auto;
+  position: relative;
+  top: -40rpx;
+}
+
+.menu-item {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx;
+  height: 140rpx;
+  /* border-bottom: 2rpx solid #EEEEEE; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 20rpx;
+  background: white;
+  border-radius: 20rpx;
+  position: relative;
+}
+
+picker {
+  width: 100%
+}
+
+.menu-item>view {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-item .ioc {
+  width: 40rpx;
+  height: auto;
+  margin-right: 20rpx;
+}
+
+.menu-item .value {
+  font-size: 30rpx;
+  color: #000000;
+}
+
+.menu-item .iocs {
+  width: 50rpx;
+  height: auto;
+  transform: rotate(90deg);
+}
+
+.menu-item text {
+  font-size: 30rpx;
+  color: #666666;
+}
+
+.notice {
+  width: 670rpx;
+  height: 40rpx;
+  background: linear-gradient(to right, #FFEBDC, rgba(255, 0, 0, 0));
+  border-radius: 6rpx;
+  position: absolute;
+  bottom: 50rpx;
+  z-index: 9;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: #D65C00;
+  font-size: 22rpx;
+  line-height: 40rpx;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.notice image {
+  width: 24rpx;
+  height: auto;
+  margin-right: 4rpx;
+}
+
+.bot {
+  margin-top: 40rpx;
+}
+
+.disb {
+  background-color: gainsboro !important;
+}
+
+.bot .pay-amount {
+  display: flex;
+  justify-content: center;
+}
+
+.pay-amount .left text {
+  font-size: 70rpx;
+  color: #ED5A01;
+  font-weight: 500;
+}
+
+.pay-amount .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10rpx;
+}
+
+.pay-amount .right text {
+  width: 100%;
+  display: block;
+  color: #999999;
+  font-size: 20rpx;
+}
+
+.remind {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.remind view {
+  width: 100%;
+  font-size: 24rpx;
+  color: #999999;
+  text-align: center;
+}
+
+.remind .mark {
+  color: #F36800;
+}
+
+.pay-btn {
+  line-height: 80rpx;
+  width: 670rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  margin: 20rpx auto;
+  background: #2B9CE8;
+  color: #FFFFFF;
+  font-size: 40rpx;
+  text-align: center;
+}
+
+.login_tips {
+  font-size: 24rpx;
+  color: #999999;
+  text-align: center;
+  padding-bottom: 20rpx;
+}

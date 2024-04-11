@@ -1,0 +1,141 @@
+/* pages/setmeal/setmeal.wxss */
+.banner {
+  height: 180rpx;
+  background: #1677FF;
+}
+
+.swiper-con {
+  width: 670rpx;
+  height: 180rpx;
+  position: relative;
+  top: -150rpx;
+  margin: auto;
+}
+
+.swiper-con image {
+  width: 100%;
+  height: 180rpx;
+  border-radius: 8px;
+}
+
+.dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.dots .dot {
+  margin: 0 8rpx;
+  width: 10rpx;
+  height: 10rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  transition: all .6s;
+}
+
+.dots .dot.active {
+  width: 32rpx;
+  border-radius: 6rpx;
+  height: 10rpx;
+}
+
+.pay-container {
+  position: relative;
+  top: -100rpx;
+}
+
+.pay-item {
+  height: 175rpx;
+  width: 670rpx;
+  margin: auto;
+  background: #FFFFFF;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.pay-content {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.right {
+  width: 144rpx;
+  height: 48rpx;
+  background: #2072FD;
+  border-radius: 24rpx;
+  text-align: center;
+  line-height: 48rpx;
+  color: #FFFFFF;
+  font-size: 24rpx;
+}
+
+.left {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* .left>view>text {
+  display: block;
+}
+
+.left>view {
+  display: flex;
+} */
+
+.left>view .money {
+  color: #FC532F;
+  font-size: 44rpx;
+}
+
+.left>view .date {
+  color: #333333;
+  font-size: 36rpx;
+  margin-left: 20rpx;
+}
+
+.left>text {
+  width: 120rpx;
+  color: #999999;
+  font-size: 26rpx;
+  position: relative;
+}
+
+.left>text::after {
+  content: '';
+  width: 120rpx;
+  height: 2rpx;
+  background-color: #999999;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 0;
+}
+
+.pay-item image {
+  width: 84rpx;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.pay-item image::after {
+  content: '推荐';
+  position: absolute;
+  top: 4rpx;
+  left: 18rpx;
+  font-size: 24rpx;
+  color: #FFFFFF;
+}

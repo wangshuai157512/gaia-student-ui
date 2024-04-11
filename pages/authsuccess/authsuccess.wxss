@@ -1,0 +1,35 @@
+/* pages/authSuccess/authsuccess.wxss */
+.auth-success-con {
+   margin: 40rpx 60rpx;
+   text-align: center;
+}
+.auth-success-box {
+    width: 630rxp;
+    height: 634rpx;
+    background: #fff;
+    border-radius: 8rpx;
+    font-size: 30rpx;
+    color: #666;
+}
+.auth-success-box image {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 120rpx;
+}
+.auth-success-box .title {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #00B578;
+    margin-top: 60rpx;
+    margin-bottom: 40rpx;
+}
+.auth-success-box text {
+    color: #333;
+    line-height: 1.8;
+}
+.auth-success-con .bg_btn {
+    position: absolute;
+    bottom: 10%;
+}

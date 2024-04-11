@@ -1,0 +1,261 @@
+.tool-nav {
+  background: white;
+  padding: 15rpx 20px;
+  box-sizing: border-box;
+}
+
+.tap-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tap-title .left {
+  color: #333333;
+  font-size: 30rpx;
+}
+
+.tap-title .right {
+  color: #999999;
+  font-size: 24rpx;
+}
+
+.tap-title .left {
+  position: relative;
+}
+
+.tap-title .left view {
+  top: 0;
+  bottom: 0;
+  right: -40rpx;
+  margin: auto;
+  z-index: 99;
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 14rpx solid #ccc;
+  border-left: 14rpx solid transparent;
+  border-right: 14rpx solid transparent;
+}
+
+.tap-title .right {
+  text-align: right;
+}
+
+.tap-title .right text {
+  font-size: 36rpx;
+  color: #323233;
+}
+
+.container-btn {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container-btn view {
+  min-width: 200rpx;
+  height: 60rpx;
+  border-radius: 6px;
+  color: #333333;
+  font-size: 30rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  background: #F7F7F7;
+  text-align: center;
+  line-height: 60rpx;
+  box-sizing: border-box;
+  padding: 0 15rpx;
+}
+
+.container-btn .actv {
+  background: #2072FD;
+  color: #FFFFFF;
+}
+
+.module_1,
+.module_2,
+.module_3 {
+  box-sizing: border-box;
+  padding: 30rpx;
+  background-color: white;
+  margin-top: 10rpx;
+}
+
+
+.car {
+  display: flex;
+  justify-content: space-between;
+}
+
+.car>view {
+  width: 28%;
+  height: 100rpx;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background: url('../../static/images/bg-01.png') no-repeat;
+  background-size: 100% 100%; */
+}
+
+.car>view image {
+  width: 100%;
+  position: absolute;
+  /* z-index: -1; */
+  top: 0;
+  left: 0;
+}
+
+.car>view>view {
+  text-align: center;
+  color: #2B9CE8;
+  font-size: 24rpx;
+  z-index: 2;
+}
+
+.detail_container .title,
+.module_2 .title {
+  height: 40rpx;
+  background: #DBE3E7;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+  justify-content: space-between;
+  font-size: 24rpx;
+  align-items: center;
+}
+
+.detail_container .title view {
+  width: 60%;
+  font-size: 24rpx;
+  text-align: right;
+  color: #333333;
+}
+
+.detail_container {
+  box-sizing: border-box;
+  padding: 20rpx 0;
+  /* margin-top: 20rpx; */
+  border-bottom: 10rpx #F7F9FC solid;
+}
+
+.detail_container :last-child {
+  border-bottom: none;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 10rpx;
+  border-bottom: 2rpx #d6d6d6 solid;
+  color: #455761;
+  font-size: 24rpx;
+}
+
+.item .b {
+  width: 20rpx;
+  height: 20rpx;
+  border: 1rpx #455761 solid;
+  line-height: 20rpx;
+  text-align: center;
+  color: 24rpx;
+  border-radius: 50%;
+  font-size: 16rpx;
+  margin-top: 8rpx;
+}
+
+.item .name {
+  height: 32rpx;
+  padding: 4rpx 6rpx;
+  border-radius: 4rpx;
+  background: #DDEEF7;
+  color: #455761;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.item image {
+  width: 30rpx;
+  height: auto;
+  margin-top: 4rpx;
+}
+
+.item .detail {
+  width: 45%;
+  font-size: 24rpx;
+  color: #455761;
+}
+
+.item .branch {
+  font-size: 24rpx;
+  color: #E82B46;
+}
+
+.content-bot {
+  padding: 30rpx;
+  height: calc(100% - 134rpx);
+}
+
+.content-bot .top {
+  height: 60rpx;
+  line-height: 60rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+}
+
+.content-bot .top .right {
+  color: #999999;
+}
+
+.project-item {
+  background: #E8FBFE;
+  height: 54rpx;
+  color: #000000;
+  font-size: 24rpx;
+  line-height: 54rpx;
+  padding: 0 12rpx;
+  /* box-sizing: border-box; */
+}
+
+.project {
+  margin: 10rpx 0;
+}
+
+.project .project-item {
+  position: relative;
+}
+
+.project .project-item::before {
+  content: "";
+  width: 90%;
+  height: 2rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: gainsboro;
+}
+
+.project :last-child::before {
+  display: none
+}
+
+.close {
+  width: 690rpx;
+  height: 64rpx;
+  text-align: center;
+  line-height: 64rpx;
+  border-radius: 64rpx;
+  background: #EAEAEA;
+  font-size: 32rpx;
+  color: #000000;
+  margin: auto;
+}
+
+.select {
+  color: #2B9CE8;
+}

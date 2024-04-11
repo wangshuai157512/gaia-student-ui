@@ -1,0 +1,30 @@
+<!--/* 我的-我的预约 */-->
+<view class='container'>
+  <view class='swiper-tab'>
+    <view class="swiper-tab-item {{msgType==item.value ? 'active' : ''}}" wx:for="{{msgTypeList}}" wx:key="index" data-current="{{item.value}}" bindtap="swichNav">
+      {{item.label}}
+    </view>
+  </view>
+
+  <view wx:if="{{datalist && datalist.length > 0 }}" class="content">
+    <view class="list-item-body" wx:for="{{datalist}}" wx:key="index" bindtap="toDetail" data-current="{{item}}">
+      <view wx:if=" {{item.createTime}}" class="l-i-b-time">
+        <text>{{item.createTime}}</text>
+      </view>
+      <view wx:if="{{item.url}}" class="l-i-b-url">
+        <image src="{{ImagOrigin+'/'+item.url}}" alt="图片加载失败" />
+      </view>
+      <view wx:if="{{item.title}}" class="l-i-b-title">
+        {{item.title}}
+      </view>
+      <view wx:if="{{item.body}}" class="l-i-b-body">
+        {{item.body}}
+      </view>
+    </view>
+  </view>
+  <view wx:else class="nodata">
+    <image mode="widthFix" src="../../static/images/nodata.png"></image>
+    <view>暂无消息</view>
+  </view>
+
+</view>

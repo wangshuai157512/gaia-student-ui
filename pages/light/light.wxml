@@ -1,0 +1,15 @@
+<!--pages/light/light.wxml-->
+<view class=light-con">
+    <video src="{{baseUrl+videoMsg.video}}" poster="{{baseUrl+videoMsg.videoScreen}}" bindplay='playVideo'></video>
+    <view class="explain-box">
+        <view class="explain-top">
+            <view class="title">灯光讲解</view>
+            <view>
+                <!-- 灯光讲解是2013年后考取小型汽车驾照必须进行的一个项目。考察驾驶人在场地操作汽车的能力。 -->
+                {{videoMsg.remark}}
+            </view>
+        </view>
+        <video-list titleOption="{{titleOption}}" videoList="{{videoList}}" changName="carModel"     bind:lookVideo="lookVideo"></video-list>
+    </view>
+
+</view>

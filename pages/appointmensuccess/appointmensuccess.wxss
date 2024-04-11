@@ -1,0 +1,105 @@
+/* pages/placeorder/placeorder.wxss */
+.banner {
+  background: #D8F1FF;
+  height: 250rpx;
+}
+.banner-img-box {
+  width: 668rpx;
+  height: 354rpx;
+  background-color: #fff;
+  text-align: center;
+  margin: -170rpx 40rpx 0 40rpx;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.banner-img-box view {
+  width:100%;
+  text-align: center;
+  display: inline-block;
+}
+
+.banner-img-box view>image {
+  width: 214rpx;
+  height: 202rpx;
+}
+.banner-img-box .explane {
+  font-size: 24rpx;
+  color: #999;
+}
+.mune-con {
+  width: 668rpx;
+  padding: 42rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 20rpx;
+  margin: 20rpx 42rpx;
+}
+.mune-con .mune-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+.mune-con .mune-item .mune-item-l {
+  display: flex;
+  align-items: center;
+  color: #5E676C;
+  font-size: 30rpx;
+}
+.mune-con .mune-item image {
+  width: 38rpx;
+  height: 33rpx;
+  margin-right: 34rpx;
+}
+
+.pay-btn {
+  line-height: 80rpx;
+  width: 670rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  margin: 20rpx auto;
+  background: #2B9CE8;
+  color: #FFFFFF;
+  font-size: 40rpx;
+  text-align: center;
+}
+
+.timeCheckd {
+  width: 100%;
+  padding-left: 44rpx;
+  border-left: 1px solid #08010217;
+  box-sizing: border-box;
+  position: relative;
+  margin: 30rpx 0 0 18rpx;
+}
+.timeCheckd .timeCheckdItem {
+  color: #999999;
+  font-size: 28rpx;
+  margin: 0 23rpx 20rpx 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+.checkTimeBot {
+  position: absolute;
+  left: -2px;
+  width: 4px;
+  height: 4px;
+  background: #B7F1FB;
+  border-radius: 50%;
+}
+.warn {
+  width: 100%;
+  padding: 24rpx 70rpx 0 70rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 1.6;
+}
+.look-appointment {
+  width: 100%;
+  text-align: center;
+  font-size: 24rpx;
+  color: #2B9CE8;
+  padding-bottom: 50rpx;
+}

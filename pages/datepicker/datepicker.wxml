@@ -1,0 +1,13 @@
+<view class="today">今天是{{ today }}</view>
+<view class="week">
+  <view wx:for="{{ week }}" wx:key="index">{{ item }}</view>
+</view>
+<view wx:for="{{ dateList }}" wx:key="index" class="date-container">
+  <view class="title">{{ item.date }}</view>
+  <view wx:for="{{ item.list }}" wx:for-item="items" wx:key="index">
+    <view wx:if="{{ !full[items.date]||items.status===-1 }}" class="round before">{{ items.status===0?'今天':items.day }}</view>
+    <!-- <view wx:elif="{{ full[items.date] }}" class="round round-full">{{ items.status===0?'今天':items.day }}</view> -->
+    <view wx:else class="round {{ currentDate===items.date?'round-stlect':'' }}" bindtap="change" data-date="{{ items.date }}">{{ items.status===0?'今天':items.day }}</view>
+    <text wx:if="{{ full[items.date].finished }}" class="full">约满</text>
+  </view>
+</view>

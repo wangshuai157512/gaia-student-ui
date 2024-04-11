@@ -1,0 +1,97 @@
+/* pages/coach/coach.wxss */
+.coach-con {
+    background: #F7F9FC;
+    padding: 20rpx 40rpx;
+    box-sizing: border-box;
+    font-size: 26rpx;
+    color: #fff;
+    font-family: PingFangSC-Medium, PingFang SC;
+}
+.coach-con .card {
+    margin-bottom: 20rpx;
+}
+.coach-con .card .card-top {
+    height: 80rpx;
+    line-height: 80rpx;
+background: #FFFFFF;
+border-radius: 10px 10px 0px 0px;
+border-bottom: 1px dashed #EAEAEA;
+color: #333;
+font-size: 30rpx;
+font-weight: bold;
+padding:0 40rpx;
+box-sizing: border-box;
+}
+.coach-con .card .card-bottom {
+    background: #FFFFFF;
+    border-radius: 0px 0px 10px 10px;
+    padding: 36rpx 40rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+.card-bottom-l {
+    font-size: 26rpx;
+    color: #666;
+    display: flex;
+}
+.card-bottom-l .photo {
+    width: 128rpx;
+    height: 128rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+.card-bottom-l .introduce>view {
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-bottom-l .introduce .title {
+    font-size: 30rpx;
+    color: #333;
+}
+.card-bottom-l .introduce .age{
+    padding: 0 12rpx;
+    background: linear-gradient(135deg, #FFE6B3 0%, #F9C989 100%);
+    box-shadow: inset 0px -1px 1px 0px rgba(255, 219, 44, 0.5);
+    border-radius: 18rpx;
+    font-size: 22rpx;
+    font-weight: bold;
+    color: #5E1B13;
+    display: flex;
+    height: 36rpx;
+    line-height: 36rpx;
+    margin-left: 8rpx;
+}
+.card-bottom-l .introduce .age .num{
+    color: #FF565E;
+    font-family: FZLTTHJW--GB1-0, FZLTTHJW--GB1;
+}
+.card-bottom-l .introduce .stu {
+    height: 48rpx;
+    line-height: 48rpx;
+}
+.card-bottom-l .introduce .score {
+    color: #FF941A;
+    font-weight: bold;
+    margin-left: 8rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+}
+.card-bottom-l .introduce .score image {
+    width: 48rpx;
+    height: 48rpx;
+    vertical-align: bottom;
+}
+
+.card-bottom-r {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-bottom-r view {
+    height: 56rpx;
+    line-height: 56rpx;
+    border-radius: 16rpx;
+    background: #1677FF;
+    padding: 0 18rpx;
+}

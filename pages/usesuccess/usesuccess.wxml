@@ -1,0 +1,11 @@
+<view class="use_info">已使用：{{ useTimer }}</view>
+<view class="container">
+  <view class="title">基本信息</view>
+  <view class="content">
+    <view>设备名称：{{ equipmentTypeName }}</view>
+    <view>设备编号：{{ trainEquipmentId }}</view>
+  </view>
+  <view wx:if="{{ equipmentType==0 }}" class="bg_btn" bindtouchend="handleTouchEnd" bindtouchstart="handleTouchStart">
+    结束训练（长按{{ timeNum }}s）
+  </view>
+</view>

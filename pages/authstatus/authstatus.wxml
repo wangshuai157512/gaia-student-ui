@@ -1,0 +1,45 @@
+<!--pages/authstatus/authstatus.wxml-->
+<view class="auth-con">
+    <view class="item" bindtap="{{applyAuditStatus==1?'':'handleSelectCity'}}">
+        <view>
+            所在城市
+        </view>
+        <view class="item-r">
+            <view>{{cityname}}</view>
+            <view>
+                <image class="icon-right" src="{{icon}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="item" wx:if="{{!cityname}}" bindtap="handleSchool">
+        <view>
+            驾校名称
+        </view>
+        <view>
+            <image class="icon-right" src="{{icon}}"></image>
+        </view>
+    </view>
+    <picker wx:else  mode="selector" disabled="{{applyAuditStatus==1?true:false}}" bindchange="handleSchool" value="{{pickerIndex}}" range="{{schoolList}}" range-key="name">
+        <view class="item">
+            <view>
+                驾校名称
+            </view>
+            <view class="item-r">
+                <view wx:if="{{drvSchoolName !== 'null'}}">{{drvSchoolName}}</view>
+                <view>
+                    <image class="icon-right" src="{{icon}}"></image>
+                </view>
+            </view>
+        </view>
+    </picker>
+    <view class="btn-box">
+        <view class="statusing" wx:if="{{applyAuditStatus==1 || applyAuditStatus==2}}" style="color:{{applyAuditStatus==1? '#FF6010' : '#FF565E'}}" >
+            {{applyAuditStatus==1? '您的信息正在审核，请您耐心等待！' : '您的信息未通过审核，请您重新选择后提交！'}}
+        </view>
+        <view wx:if="{{applyAuditStatus==1 || !drvSchoolName || drvSchoolName == 'null'}}" class="bg_btn" style="background-color: #ccc;">
+            提交
+        </view>
+        <view class="bg_btn" bindtap="schoolRegisterSubmit" wx:else>提交</view>
+    </view>
+
+</view>

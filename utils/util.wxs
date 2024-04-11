@@ -1,0 +1,32 @@
+module.exports = {
+
+  dateSplit: function (str) {
+    return str.split(' ').length > 1 ? str.split(' ')[0] : ''
+  },
+
+  timeSplit: function (str) {
+    if (str.split(' ').length > 1) {
+      return str.split(' ')[1].split(':')[0] + ':' + str.split(' ')[1].split(':')[1]
+    } else {
+      return ''
+    }
+  },
+
+  parseTimes: function (t) {
+    var val = t / 1000;
+
+    if (val < 60) {
+      return val + "秒";
+    } else {
+      var min_total = Math.floor(val / 60); // 分钟
+      var sec = Math.floor(val % 60); // 余秒
+      if (min_total < 60) {
+        return min_total + "分钟" + sec + "秒";
+      } else {
+        var hour_total = Math.floor(min_total / 60); // 小时数
+        var min = Math.floor(min_total % 60); // 余分钟
+        return hour_total + "小时" + min + "分钟" + sec + "秒";
+      }
+    }
+  }
+}

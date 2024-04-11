@@ -1,0 +1,29 @@
+<!--pages/login/login.wxml-->
+<view class="login-con" style="height:{{wH}}rpx;">
+    <!-- <view class="title">欢迎使用学员小蜜</view>
+    <view>一键登录，让学车变得更简单</view> -->
+    <image src="../../static/images/imglogin.png"></image>
+    <view class="btn">
+        <button class="bg_btn" bindtap="getUserProfile" style="z-index: 2;" wx:if="{{!isLogin}}">
+            微信账号快捷登录
+        </button>
+        <button class="bg_btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">手机号快捷登录</button>
+        <view class="explain">
+            <!-- 若您的微信号未注册，将为您直接注册，注册即视为同意 -->
+            <!-- <view style="color: #2072FD;">《精英智通考场助手小程序注册协议》</view> -->
+        </view>
+    </view>
+    <view class="bottomtext">
+        <checkbox-group bindchange="redioboxChange">
+            <checkbox value="{{ btnDisabled }}" checked="" />
+            我已阅读并同意<text style="color: #3B70F4;" bindtap="textcontent" decode="true">《用户协议》&nbsp;</text>
+            <text style="color: #3B70F4;" bindtap="textcontent2">《隐私政策》</text>
+        </checkbox-group>
+        <!-- <radio-group bindchange="redioboxChange">
+            <radio value="{{ btnDisabled }}" checked="{{ btnDisabled }}" />
+            我已阅读并同意<text style="color: #3B70F4;" bindtap="textcontent" decode="true">《用户协议》&nbsp;</text>
+            <text style="color: #3B70F4;" bindtap="textcontent2">《隐私政策》</text>
+        </radio-group> -->
+    </view>
+
+</view>

@@ -1,0 +1,5 @@
+<block wx:if="{{ coachInfo }}">
+  <image class="bg_avatar" src="{{ ImagOrigin+coachInfo.photo }}"></image>
+  <view class="warn_text">“您正在将{{ coachInfo.name }}设置为您的推荐人”</view>
+  <button bindtap="handleBindTap" class="bg_btn">立即绑定</button>
+</block>

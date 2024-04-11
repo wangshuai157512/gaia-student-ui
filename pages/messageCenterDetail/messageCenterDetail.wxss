@@ -1,0 +1,53 @@
+/* 我的-消息详情 */
+
+
+.content {
+  width: 100%;
+}
+
+.content .list-item-body {
+  position: relative;
+  width: 90%;
+  margin: 5% 2.5% 0 2.5%;
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+
+
+.l-i-b-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.l-i-b-url {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  padding: 20rpx;
+
+}
+
+.l-i-b-url image {
+  height: 360rpx;
+  border: 20rpx solid #F7F9FC;
+}
+
+.l-i-b-title {
+  font-size: 32rpx;
+  background-color: #FFFFFF;
+  padding: 20rpx 20rpx 0 20rpx;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.l-i-b-body {
+  font-size: 28rpx;
+  background-color: #FFFFFF;
+  padding: 20rpx;
+  color: rgb(90, 90, 90);
+  word-wrap: break-word;
+  word-break: break-all;
+}

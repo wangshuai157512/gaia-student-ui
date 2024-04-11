@@ -1,0 +1,85 @@
+.today {
+  height: 44rpx;
+  text-align: center;
+  line-height: 44rpx;
+  background: #E8FBFE;
+  color: #2B9CE8;
+  font-size: 24rpx;
+}
+
+.week {
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  background-color: #2B9CE8;
+}
+
+.week view {
+  flex: 1;
+  line-height: 60rpx;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 28rpx;
+}
+
+.date-container {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  padding: 20rpx 0;
+  background-color: white;
+  flex-wrap: wrap;
+  margin-bottom: 16rpx;
+}
+
+.date-container>.title {
+  width: 100%;
+  text-align: center;
+  color: #333333;
+  font-size: 24rpx;
+}
+
+.date-container>view {
+  width: 107.14rpx;
+  height: 90rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+.round {
+  width: 70rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: 400;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.before {
+  color: #A8A8A8;
+}
+
+.after {
+  color: #333333;
+}
+
+.round-stlect {
+  background-color: #2B9CE8;
+  color: white;
+}
+
+.round-full {
+  background: #F3F3F4;
+  color: #BBBBBB;
+}
+
+.full {
+  height: 20rpx;
+  color: #E82B46;
+  display: block;
+  text-align: center;
+  font-size: 16rpx;
+  line-height: 20rpx;
+}

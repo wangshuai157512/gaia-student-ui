@@ -1,0 +1,21 @@
+<!--pages/study/studyunit/studyunit.wxml-->
+<view class="study-unit">
+    <view style="height: 120rpx;"></view>
+    <scroll-view scroll-x="true" class="tab-title">
+            <view wx:for="{{tabTitle}}" wx:key="index" data-index="{{index}}" data-carModel="{{item}}" 
+       bindtap="handleTab" class="{{index==tabIndex?'active':''}}">{{item}}</view>
+    </scroll-view>
+    <view class="tab-con">
+        <view class="item" wx:for="{{tabList}}" wx:key="index" data-id="{{item.id}}"bindtap="handleVideo" >
+            <view class="item-l">
+                <image src="{{baseUrl+item.videoScreen}}" data-id="{{item.id}}"></image>
+                <view data-id="{{item.id}}">{{item.name}}</view>
+            </view>
+            <view class="item-r">
+                <view wx:if="{{item.duration}}" class="time" data-id="{{item.id}}">{{item.duration}}</view>
+                <image data-id="{{item.id}}" src="../../static/images/video-play.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view style="height: 100rpx;"></view>

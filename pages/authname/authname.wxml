@@ -1,0 +1,28 @@
+<!--pages/authname/authname.wxml-->
+<view class="authname-con" wx:if="{{query.nameAuthAuditStatus === '0'}}">
+    <view class="explain-con">
+        <image src="../../static/images/icon-warning.png"></image>
+        <view>
+            为了响应国家要求，保证您资金安全，及个人信息的真实性，请填写与您身份证一致的信息，否则将不会通过审核！
+        </view>
+    </view>
+    <view>
+        <input style="border-bottom: 1px solid #F7F9FC;" class="authname" value="{{query.name}}" bindinput="changeName" placeholder="真实姓名" />
+    </view>
+    <view>
+        <input class="authname" value="{{query.idCard}}" bindinput="changeCard" placeholder="身份证" />
+    </view>
+    <view class="bg_btn" bindtap="subAuthName">
+        提交
+    </view>
+</view>
+
+<!-- 认证成功 -->
+<view class="auth-success-con" wx:if="{{query.nameAuthAuditStatus === '3'}}">
+    <view class="auth-success-box">
+        <image src="{{photoaddr}}"></image>
+        <view class="title">您已通过实名认证</view>
+        <view>姓   名：<text>{{query.name}}</text></view>
+        <view>身份证：<text>{{query.idCard}}</text></view>
+    </view>
+</view>
